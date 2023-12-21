@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quản lý quán cà phê</title>
+    <link rel="stylesheet" type="text/css" href="implement.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8qduVg+6deLm3BjqzUcJLp9tLirVt8uvtgIic+7e69hdyKjgQZGjRa2gM5K6"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Quản lý quán cà phê</h1>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  ><i class="fa fa-home"></i> Trang chủ</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="products.html"
+                  ><i class="fa fa-shopping-bag"></i> Sản phẩm</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="schedule.html"
+                  ><i class="fa fa-calendar"></i> Xem lịch trình</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="huongDan.html"
+                  ><i class="fa fa-book"></i> Hướng dẫn</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="lienheIm.html"
+                  ><i class="fa fa-envelope"></i> Liên Hệ</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html"
+                  ><i class="fas fa-sign-in-alt"></i> Đăng nhập</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register.html"
+                  ><i class="fas fa-user-plus"></i> Đăng ký</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="dat-ban">
+        <form id="booking-form">
+          <h2>Đặt bàn</h2>
+
+          <div class="form-group">
+            <label for="name">Họ tên:</label>
+            <input type="text" id="name" placeholder="Nhập họ tên" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">SĐT:</label>
+            <input type="tel" id="phone" placeholder="Nhập số điện thoại" />
+          </div>
+
+          <div class="form-group">
+            <label for="res-date">Ngày giờ:</label>
+            <input type="datetime-local" id="res-date" />
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Số lượng:</label>
+            <input type="number" id="guests" min="1" value="1" />
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Ghi chú:</label>
+            <textarea id="notes"></textarea>
+          </div>
+
+          <div class="submit-btn">
+            <button type="submit">
+              <i class="bi bi-calendar"></i> Đặt bàn
+            </button>
+          </div>
+        </form>
+
+        <div id="table-selection">
+          <h3>Chọn bàn của bạn</h3>
+          <p id="available-table-count"></p>
+          <div id="tables">
+            <!-- Các bàn A1 đến A12 sẽ được thêm ở đây -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h3>Về Quán Cà Phê</h3>
+          <p>
+            Quán cà phê chúng tôi cung cấp không gian yên tĩnh, thoải mái, lý
+            tưởng cho việc đọc sách, làm việc hoặc thư giãn.
+          </p>
+        </div>
+        <div class="footer-section links">
+          <h3>Liên kết Hữu Ích</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Sự Kiện</a></li>
+            <li><a href="#">Hỗ trợ Khách hàng</a></li>
+            <li><a href="#">Chính sách Riêng tư</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact-form">
+          <h3>Liên hệ</h3>
+          <form>
+            <input type="email" placeholder="Email của bạn" required />
+            <textarea placeholder="Tin nhắn của bạn"></textarea>
+            <button type="submit">Gửi</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Quán Cà Phê | Designed by Nguyễn Lê Hoàng Khang</p>
+      </div>
+    </footer>
+
+    <script src="implement.js"></script>
+  </body>
+</html>

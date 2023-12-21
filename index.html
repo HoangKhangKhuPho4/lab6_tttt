@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nguyễn Lê Hoàng Khang - IT Front End Web Developer. Explore my resume and my work.">
+    <meta name="keywords" content="Nguyễn Lê Hoàng Khang, Web Developer, Resume, Projects">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website cá nhân GTNM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+
+
+</head>
+<body>
+    <div class="navbar">
+
+        <a href="#"><i class="bi bi-house-door-fill"></i> Home</a>
+      
+        <a href="#profile-section"><i class="bi bi-person-lines-fill"></i> Profile</a>
+      
+        <a href="#education-section"><i class="bi bi-mortarboard"></i> EDUCATION</a>      
+        <a href="#experience-section"><i class="bi bi-briefcase-fill"></i> Experience</a>
+      
+        <a href="#contact-section"><i class="bi bi-chat-left-text-fill"></i> Contact</a>
+      
+        <a href="about_xtra.html"><i class="bi bi-info-circle-fill"></i> About</a>
+      
+        <a href="lab4.html"><i class="bi bi-journal-bookmark-fill"></i> Lab 4</a>
+        <a href="lab6.html"><i class="bi bi-columns"></i> Lab 6</a>      
+      </div>
+    <div class="resume">
+        <div class="sidebar">
+            <img src="img/anhcanhan.jpg" alt="Profile Picture" class="profile-pic" width="50" height="100">
+            <h3 class="contact-me" id="contact-section">CONTACT ME</h3>
+            <p><i class="bi bi-telephone-fill"></i> <strong>PHONE:</strong> 0567649206</p>
+
+            <p><i class="bi bi-envelope-fill"></i> <strong>MAIL:</strong> 22130116@st.hcmuaf.edu.vn</p>
+            
+            <p><i class="bi bi-linkedin"></i> <strong>LINKEDIN:</strong> linkedin.com/username</p> 
+            
+            <p><i class="bi bi-house-fill"></i> <strong>ADDRESS:</strong> Khu phố 4.Thị Trấn Phước Dân , huyện Ninh Phước,Tỉnh Ninh Thuận</p>
+
+            <div class="skills-section">
+                <h3>SKILLS</h3>
+                <ul>
+                    <li><strong>Ngôn ngữ lập trình:</strong> Java, Python, JavaScript, C++</li>
+                    <li><strong>Công cụ & Công nghệ:</strong> Git, Docker, Jenkins, AWS, Azure</li>
+                    <li><strong>Phát triển Web:</strong> HTML, CSS, React, Node.js, Express.js</li>
+                    <li><strong>Cơ sở dữ liệu:</strong> SQL (MySQL, PostgreSQL), NoSQL (MongoDB, Cassandra)</li>
+                    <li><strong>DevOps:</strong> CI/CD, Kubernetes, Terraform</li>
+                    <li><strong>Phân tích dữ liệu:</strong> R, Matlab, Tableau</li>
+                    <li><strong>Trí tuệ nhân tạo:</strong> TensorFlow, PyTorch</li>
+                    <li><strong>Mạng & Bảo mật:</strong> OSI Model, VPN, Firewall, IDS/IPS</li>
+                    <li><strong>Phần mềm quản lý dự án:</strong> JIRA, Trello</li>
+                    <li><strong>Giao tiếp:</strong> Đội ngũ đa văn hóa, trình bày dự án, đàm phán kỹ thuật</li>
+                </ul>
+            </div>
+             
+            <div class="language-section">
+                <h3>LANGUAGE</h3>
+                <ul>
+                    <li><strong>Tiếng Việt:</strong> Bản ngữ</li>
+                    <li><strong>Tiếng Anh:</strong> Thành thạo (TOEFL iBT: 95, IELTS: 7.5)</li>
+                    <li><strong>Tiếng Nhật:</strong> Trình độ sơ cấp (JLPT: N4)</li>
+                    <li><strong>Tiếng Pháp:</strong> Giao tiếp cơ bản (DELF: A2)</li>       
+                    <li><strong>Tiếng Tây Ban Nha:</strong> Giao tiếp cơ bản</li>
+                </ul>
+            </div>
+            <div class="passions-section">
+                <h3>PASSIONS</h3>
+                <ul>
+                    <li><strong>Code & Tech:</strong> Luôn theo dõi các xu hướng công nghệ mới và tham gia các dự án mã nguồn mở.</li>
+                    <li><strong>Đọc sách:</strong> Yêu thích các tác phẩm về triết học, khoa học và lịch sử.</li>
+                    <li><strong>Du lịch:</strong> Khám phá các vùng đất mới, tìm hiểu văn hóa và ẩm thực địa phương.</li>
+                    <li><strong>Âm nhạc:</strong> Chơi guitar và tham gia ban nhạc nhỏ trong cộng đồng.</li>
+                    <li><strong>Thể thao:</strong> Thường xuyên chạy bộ và tham gia các giải chạy marathon.</li>
+                    <li><strong>Nhiếp ảnh:</strong> Chụp ảnh du lịch và phong cảnh tự nhiên.</li>
+                    <li><strong>Nấu ăn:</strong> Thử nghiệm các công thức nấu ăn từ khắp nơi trên thế giới.</li>
+                    <li><strong>Viết lách:</strong> Viết blog cá nhân và chia sẻ những trải nghiệm và suy nghĩ.</li>
+                </ul>    
+            </div>
+            <div class="contact-form">
+                <form id="contact-form" onsubmit="handleSubmit(event)">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                
+                    <input type="submit" value="Send Message">
+                </form>
+                
+            </div>
+            
+        </div>
+        <div class="main-content">
+            <h1 class="title" id="top">Nguyễn Lê Hoàng Khang<br/>IT - Front End Web Developer</h1>
+                <!-- HTML -->
+           <p class="slide-in">Văn bản sẽ trượt vào từ bên trái khi trang web được tải.</p>
+
+            <div class="profile-section" id="profile-section">
+                <h2><img src="img/profile.png" alt="Profile Icon" width="24" height="24"> PROFILE</h2>
+                
+                <p>
+                    Với hơn 5 năm kinh nghiệm trong lĩnh vực Công nghệ thông tin, tôi luôn đề cao tầm nhìn chiến lược và tập trung vào việc giải quyết vấn đề thông qua công nghệ. Tôi có khả năng làm việc độc lập cũng như trong môi trường nhóm, luôn theo dõi và nắm bắt các xu hướng công nghệ mới để áp dụng vào các dự án thực tế. 
+                </p>
+                <p>
+                    Được đào tạo chuyên sâu với một nền tảng vững chắc về lập trình và thiết kế hệ thống, tôi tự tin trong việc phân tích, thiết kế và triển khai các giải pháp phần mềm hiệu quả. Bên cạnh đó, tôi cũng luôn khao khát học hỏi, tiếp tục nâng cao kiến thức và kỹ năng để phục vụ tốt hơn cho công việc và đóng góp giá trị cho doanh nghiệp.
+                </p>
+            </div>
+            <div class="education-section" id="education-section">
+                <h2><img src="img/edu.png" alt="" width="24" height="24"> EDUCATION</h2>
+
+                <div class="degree">
+                    <h4>2017-2021: Cử nhân Công nghệ thông tin</h4>
+                    <p><strong>HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY</strong></p>
+                    <ul>
+                        <li>Chuyên ngành: Phát triển phần mềm</li>
+                        <li>Luận văn cuối kỳ: "Ứng dụng trí tuệ nhân tạo trong xử lý ngôn ngữ tự nhiên"</li>
+                        <li>Đạt giải nhất cuộc thi lập trình Đại học Kỹ thuật ABC năm 2020.</li>
+                    </ul>
+                </div>
+                <div class="degree">
+                    <h4>2015-2017: NONG LAM UNIVERSITY</h4>
+                    <p><strong>Khoa Công Nghệ Thông Tin</strong></p>
+                    <ul>
+                        <li>Chuyên ngành: Hệ thống thông tin</li>
+                        <li>Dự án tiêu biểu: "Xây dựng hệ thống quản lý kho hàng trực tuyến"</li>
+                        <li>Tham gia câu lạc bộ lập trình và đạt giải ba cuộc thi hackathon năm 2016.</li>
+                    </ul>
+                </div>
+            <div class="experience-section" id="experience-section">
+                <h2><img src="img/ex.png" alt="" width="24" height="24"> EXPERIENCE</h2>
+
+                <div class="job">
+                    <h4>2021-2023: Full-Stack Developer</h4>
+                    <p><strong>Software Quality Assurance (Tester) (Jira, Selenium)</strong></p>
+                    <ol type="1">
+                        <li>Phát triển và bảo trì các ứng dụng web cho khách hàng sử dụng JavaScript, React và Node.js.</li>
+                        <li>Tối ưu hóa hiệu suất trang web và giảm thời gian tải trang.</li>
+                        <li>Làm việc chặt chẽ với đội ngũ thiết kế để tạo ra giao diện người dùng hấp dẫn và thân thiện.</li>
+                    </ol>
+                </div>
+                <div class="job">
+                    <h4>2019-2021: ưưSoftware Engineer</h4>
+                    <p><strong>Zuhlke Engineering Vietnam</strong></p>
+                    <ol type="1">
+                        <li>Tham gia vào việc xây dựng và kiểm thử các sản phẩm phần mềm dành cho doanh nghiệp.</li>
+                        <li>Đảm bảo mã nguồn đạt tiêu chuẩn và dễ dàng bảo trì.</li>
+                        <li>Tư vấn và hỗ trợ khách hàng về các vấn đề kỹ thuật liên quan đến sản phẩm.</li>
+                    </ol>
+                </div>
+                <div class="job">
+                    <h4>2023-2025: DevOps Engineer</h4>
+                    <p><strong>Absolute Software (Vietnam) Ltd</strong></p>
+                    <ol type="1">
+                        <li>Quản lý và tối ưu hóa hạ tầng cloud sử dụng AWS và Azure.</li>
+                        <li>Tự động hóa quy trình triển khai ứng dụng bằng Jenkins và Docker.</li>
+                        <li>Đảm bảo tính sẵn sàng và độ tin cậy của hệ thống thông qua giám sát và cảnh báo.</li>
+                    </ol>
+                </div> 
+              
+                 
+              
+              
+            
+            </div>
+                
+        </div>
+        <div class="latest-blog-posts">
+
+            <h3>Bài Viết Mới Nhất</h3>
+          
+            <div class="blog-post">
+              <a href="https://vacancy-vietnam.vn">
+                <img src="img/co-hoi-viec-lam.jpg" width="100px" alt="Hình 1">
+                <h4>Cơ hội việc làm mới nhất</h4>  
+              </a>
+              <p>Cập nhật hàng ngày các cơ hội việc làm tốt nhất. Đăng ngày 01/12/2023</p>
+              <a href="https://vacancy-vietnam.vn">Đọc Thêm</a>
+            </div>
+          
+            <div class="blog-post">
+              <a href="https://didongviet.vn/dchannel/tin-tuc-cong-nghe-tuan-45-2023/">
+               <img src="img/tin-cong-nghe.jpg" width="100px" alt="Hình 2">
+               <h4>Tin tức công nghệ mới</h4>
+              </a>
+              <p>Cập nhật tin tức về công nghệ, thiết bị di động mới nhất. Đăng ngày 01/12/2023</p>
+              <a href="https://cafef.vn/samsung-se-bat-dau-lan-song-cuoc-chien-ai-smartphone-voigalaxy-s24-188231201232158051.chn">Đọc Thêm</a>
+            </div>
+          
+          </div>
+        
+
+        <div class="portfolio">
+            <h3>Dự Án Cá Nhân</h3>
+            <div class="project">
+                <img src="img/du-an-ca-nhan.png" alt="Project Image">
+                <div class="project-info">
+                    <h4>Website Đặt Vé Máy Bay</h4>
+                    <p>Trang web đặt vé máy bay là nền tảng online cho phép khách hàng tìm kiếm, so sánh và đặt mua vé máy bay một cách dễ dàng và nhanh chóng.
+
+                        Người dùng có thể sử dụng các tiện ích tìm kiếm để lọc, so sánh giá vé của nhiều hãng hàng không khác nhau, ở các thời điểm bay và ngày bay linh hoạt. Hệ thống sẽ tự động đề xuất các chặng bay phù hợp với ngày đi và về do khách chọn.
+                        
+                        Sau khi lựa chọn được chuyến bay và giá vé phù hợp, khách hàng có thể đặt mua và thanh toán ngay trên website. Hệ thống cho phép lưu lại thông tin khách hàng để đặt vé lần sau được thuận tiện hơn.
+                        
+                        Trang web cũng có tích hợp các tiện ích hỗ trợ khách như: đặt combo khách sạn - vé máy bay, mua bảo hiểm du lịch, đăng ký gói nâng cấp hạng ghế... mang lại trải nghiệm tốt nhất cho người dùng.</p>
+                    <a href="https://hoangkhangkhupho4.github.io/hoangkhanggauss.github.io/">Xem Thêm</a>
+                </div>
+            </div>
+            <!-- Thêm các dự án khác tương tự -->
+        </div>
+        
+        <div class="social-media-widget">
+            <h3>Theo Dõi Tôi</h3>
+            <a href="https://www.facebook.com/profile.php?id=100088292157574" target="_blank" class="bi bi-facebook">
+            </a>
+            <a href="" target="_blank" class="bi bi-google">
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" class="bi bi-github">
+            </a>
+        </div>
+        
+        
+        
+    </div>
+    <a href="#top" class="back-to-top">↑</a>
+    <script src="script.js"></script>
+         
+</body>
+</html>

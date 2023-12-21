@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4 Management Page</title>
+    <link rel="stylesheet" href="lab4.css" />
+    <script src="lab4.js"></script>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    />
+    <style>
+      #homeButton {
+        background-color: #007bff; /* Màu xanh dương đậm */
+        color: white;
+        font-size: 20px; /* Kích thước chữ lớn hơn */
+        padding: 15px 30px; /* Đệm xung quanh chữ */
+        border-radius: 10px; /* Bo góc */
+      }
+      #homeButton:hover {
+        background-color: #0056b3; /* Màu tối hơn khi hover */
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng xung quanh */
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      #homeButton {
+        animation: pulse 2s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Requirement')">
+        <i class="bi bi-list-check"></i> Requirement
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'Design')">
+        <i class="bi bi-pencil-square"></i> Design
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'Implement')">
+        <i class="bi bi-laptop"></i> Implement
+      </button>
+    </div>
+
+    <div id="Requirement" class="tabcontent">
+      <h2>Yêu cầu Lab 4</h2>
+      <p>Chào các em,</p>
+      <p>
+        Trong phần Lab 4 này, mỗi bạn sẽ chọn một đối tượng thực tế và thực hiện
+        thiết kế chức năng quản lý trên HTML cho đối tượng đó. Cụ thể, các bạn
+        cần xây dựng các tính năng:
+      </p>
+      <ul>
+        <li>Thêm (Create)</li>
+        <li>Sửa (Update)</li>
+        <li>Xóa (Delete)</li>
+        <li>Tìm kiếm (Search)</li>
+      </ul>
+      <p>
+        Đối tượng có thể là
+        <strong>lớp môn học, giảng viên, sinh viên,</strong> hoặc bất kỳ đối
+        tượng nào khác trong thế giới thực. Mỗi thành viên trong lớp hoặc trong
+        nhóm phải chọn một đối tượng khác nhau để tránh trùng lặp.
+      </p>
+      <p>Hãy chắc chắn rằng bạn:</p>
+      <ol>
+        <li>Thiết kế chức năng phản ánh đúng các nghiệp vụ cần thiết.</li>
+        <li>
+          Tạo một menu Lab4 trên website cá nhân, sử dụng thẻ
+          <code>&lt;a&gt;</code> để liên kết các tab.
+        </li>
+        <li>
+          Tab Requirement sẽ chứa nội dung này được trình bày một cách rõ ràng
+          và bắt mắt.
+        </li>
+      </ol>
+      <p>
+        <span> Lưu ý</span>: Các tính năng phải được triển khai hoàn chỉnh trên
+        trang HTML của bạn và sau đó được tải lên website cá nhân trên GitHub.
+        Đặc biệt, cô sẽ tự động đóng tính năng nộp bài sau deadline nên các em
+        chú ý hoàn thành và nộp bài đúng hạn để tránh bị điểm 0.
+      </p>
+      <p>Chúc các em thành công!</p>
+    </div>
+
+    <div id="Design" class="tabcontent">
+      <h3>Design</h3>
+      <p>Below are the design materials for review and download:</p>
+
+      <h2>Thiết kế giao diện</h2>
+
+      <section>
+        <h3>Thiết kế trên giấy</h3>
+
+        <p>Đây là bản phác thảo ban đầu của giao diện trên giấy.</p>
+
+        <div class="download-btn">
+          <a href="img/DesignTay1.jpg" download>
+            <button>Tải xuống</button>
+          </a>
+        </div>
+
+        <img src="img/DesignTay1.jpg" width="400px" alt="Thiết kế giấy" />
+      </section>
+
+      <section>
+        <h3>Thiết kế trên giấy bản 2</h3>
+
+        <p>Đây là bản phác thảo ban đầu của giao diện trên giấy.</p>
+
+        <div class="download-btn">
+          <a href="img/designTay2.jpg" download>
+            <button>
+              <i class="fas fa-download"></i>
+              Tải thiết kế giấy
+            </button>
+          </a>
+        </div>
+
+        <img src="img/designTay2.jpg" width="400px" alt="Thiết kế giấy" />
+      </section>
+
+      <section>
+        <h3>Thiết kế trên giấy bản 3</h3>
+
+        <p>Đây là bản phác thảo ban đầu của giao diện trên giấy.</p>
+
+        <div class="download-btn">
+          <a href="img/designTay3.jpg" download>
+            <button>
+              <i class="fas fa-download"></i>
+              Tải thiết kế giấy
+            </button>
+          </a>
+        </div>
+
+        <img src="img/designTay3.jpg" width="400px" alt="Thiết kế giấy" />
+      </section>
+
+      <section>
+        <h3>Thiết kế giao diện bằng HTML</h3>
+
+        <p>Đây là bản phác thảo ban đầu của giao diện trên HTML.</p>
+
+        <div class="download-btn">
+          <a href="img/anhGiaoDienHtml1.png" download>
+            <button>
+              <i class="fas fa-download"></i>
+              Tải thiết kế trên HTML,CSS,JavaScript
+            </button>
+          </a>
+        </div>
+
+        <img
+          src="img/anhGiaoDienHtml1.png"
+          width="400px"
+          alt="Thiết kế trên HTML,CSS,JavaScript"
+        />
+      </section>
+
+      <section>
+        <h3>Thiết kế giao diện bằng HTML bản 2</h3>
+
+        <p>Đây là bản phác thảo thứ 2 của giao diện trên HTML.</p>
+
+        <div class="download-btn">
+          <a href="img/anhGiaoDienHtml2.png" download>
+            <button>
+              <i class="fas fa-download"></i>
+              Tải thiết kế trên HTML,CSS,JavaScript
+            </button>
+          </a>
+        </div>
+
+        <img
+          src="img/anhGiaoDienHtml2.png"
+          width="400px"
+          alt="Thiết kế trên HTML,CSS,JavaScript"
+        />
+      </section>
+
+      <section>
+        <h3>Thiết kế giao diện bằng HTML bản 2</h3>
+
+        <p>Đây là bản phác thảo thứ 3 của giao diện trên HTML.</p>
+
+        <div class="download-btn">
+          <a href="img/anhGiaoDienHtml3.png" download>
+            <button>
+              <i class="fas fa-download"></i>
+              Tải thiết kế trên HTML,CSS,JavaScript
+            </button>
+          </a>
+        </div>
+
+        <img
+          src="img/anhGiaoDienHtml3.png"
+          width="400px"
+          alt="Thiết kế trên HTML,CSS,JavaScript"
+        />
+      </section>
+
+      <section>
+        <h3>Thiết kế trên Figma</h3>
+
+        <p>Sau đây là bản thiết kế chi tiết giao diện trên Figma.</p>
+
+        <div class="figma-btn">
+          <a href="https://www.figma.com/file/xxx" target="_blank">
+            <button>
+              <i class="fas fa-external-link-alt"></i>
+              Xem trên Figma
+            </button>
+          </a>
+        </div>
+
+        <img src="figma.jpg" alt="Thiết kế Figma" />
+      </section>
+
+      <section>
+        <h3>Thiết kế trên Figma</h3>
+        <p>Sau đây là bản thiết kế chi tiết giao diện trên Figma.</p>
+      </section>
+    </div>
+
+    <div id="Implement" class="tabcontent">
+      <h3>Implement</h3>
+
+      <iframe src="implement.html" width="100%" height="1000px"></iframe>
+    </div>
+    <div class="container text-center mt-4 mb-4">
+      <button id="homeButton" class="btn btn-primary">
+        <i class="bi bi-house-door"></i> Quay lại trang chủ
+      </button>
+    </div>
+
+    <script>
+      document
+        .getElementById("homeButton")
+        .addEventListener("click", function () {
+          window.location.href = "index.html"; // Đảm bảo rằng index.html là đường dẫn đúng
+        });
+    </script>
+  </body>
+</html>

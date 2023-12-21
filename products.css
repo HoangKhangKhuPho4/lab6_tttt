@@ -1,0 +1,162 @@
+#checkoutButton:active {
+  background-color: #ff0000; /* Màu đỏ sáng, dễ nhận biết */
+  color: #ffffff; /* Màu chữ trắng để tạo sự đối lập */
+  border: 1px solid #ffffff; /* Viền trắng để tăng tính nổi bật */
+  transform: scale(0.95); /* Làm nhỏ nút một chút để tạo hiệu ứng nhấn */
+  transition: all 0.2s ease; /* Chuyển đổi mượt mà cho tất cả hiệu ứng */
+}
+body {
+  font-family: Arial, sans-serif;
+}
+#product-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+button[onclick^="addToCart"]:active {
+  background-color: #28a745; /* Màu xanh lá cây nhạt, dễ chịu */
+  color: #fff;
+  border: 1px solid #fff;
+  transform: scale(0.98); /* Nhẹ nhàng co lại khi được nhấn */
+  transition: all 0.2s ease; /* Chuyển đổi mượt mà */
+}
+button[onclick^="removeFromCart"]:active {
+  background-color: #dc3545; /* Màu đỏ nhạt, dễ nhìn */
+  color: #fff;
+  border: 1px solid #fff;
+  transform: scale(0.98); /* Nhẹ nhàng co lại khi được nhấn */
+  transition: all 0.2s ease; /* Chuyển đổi mượt mà */
+}
+#reviewPanel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 80%;
+  max-width: 500px;
+}
+
+#ratings {
+  justify-content: center;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7); /* Màu trắng với độ trong suốt */
+  display: none;
+}
+#ratings .fa-star {
+  color: gray;
+  cursor: pointer;
+}
+
+#noReviewButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 15px; /* Giảm kích thước đệm */
+  font-size: 12px; /* Giảm kích thước chữ */
+}
+
+#noReviewButton:hover {
+  /* Hiệu ứng khi di chuột qua nút */
+  background-color: #d32f2f;
+}
+#reviewBox {
+  border: 2px solid black; /* Thêm viền đen */
+  padding: 10px; /* Thêm đệm xung quanh nội dung */
+  margin: 10px; /* Tạo khoảng cách xung quanh khung */
+  background-color: white; /* Nền trắng để làm nổi bật viền */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ để làm nổi bật hơn */
+  border-radius: 5px; /* Làm tròn góc của khung */
+}
+#reviewContent {
+  padding: 10px; /* Đặt đệm bên trong */
+  border: 1px solid #ddd; /* Tạo viền nhẹ cho nội dung */
+  background-color: #f9f9f9; /* Màu nền khác biệt để nổi bật nội dung */
+  border-radius: 5px; /* Làm tròn góc */
+  /* Thêm bất kỳ thuộc tính CSS nào khác bạn muốn áp dụng cho nội dung */
+}
+#reviewBox h3 {
+  text-align: center;
+}
+#ratings,
+#reviewBox button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+#closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333; /* Màu chữ đậm hơn */
+  border: 2px solid black; /* Viền đen đậm hơn */
+  padding: 5px;
+  background-color: white; /* Nền trắng */
+  border-radius: 5px; /* Làm tròn góc */
+  transition: all 0.2s ease; /* Chuyển đổi mượt mà */
+}
+
+#closeButton:hover {
+  background-color: #f44336; /* Màu nền khi hover: đỏ nhạt */
+  color: white; /* Màu chữ khi hover: trắng */
+  border-color: #d32f2f; /* Màu viền khi hover */
+}
+.countdown-modal {
+  display: none; /* Ẩn ban đầu */
+  position: fixed; /* Ở trên cùng và luôn hiển thị */
+  left: 0;
+  top: 0;
+  width: 100%; /* Chiều rộng toàn màn hình */
+  height: 100%; /* Chiều cao toàn màn hình */
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+  z-index: 1; /* Đảm bảo nó nằm trên các phần tử khác */
+}
+
+.countdown-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% từ đỉnh và giữa màn hình */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Chiều rộng của hộp thông báo */
+  text-align: center; /* Căn giữa nội dung */
+}

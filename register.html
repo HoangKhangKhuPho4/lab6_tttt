@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Ký - Quản lý quán cà phê</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Optional: Custom Stylesheet -->
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .card {
+        margin-top: 20px;
+      }
+
+      .form-control {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mt-5">
+          <!-- Card for Registration Form -->
+          <div class="card shadow">
+            <div class="card-body">
+              <h3 class="card-title text-center">Đăng Ký</h3>
+              <form id="registrationForm">
+                <div class="form-group">
+                  <label for="username">Tên đăng nhập:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    required
+                    placeholder="Tên đăng nhập"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Mật khẩu:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    required
+                    placeholder="Mật khẩu"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="confirmPassword">Xác nhận mật khẩu:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    required
+                    placeholder="Xác nhận mật khẩu"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  Đăng Ký
+                </button>
+              </form>
+              <button id="backButton" class="btn btn-secondary btn-block mt-3">
+                Quay lại trang quản lý
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Lấy giá trị từ form
+          var username = document.getElementById("username").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+          var confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+          // Kiểm tra mật khẩu và xác nhận mật khẩu
+          if (password !== confirmPassword) {
+            alert("Mật khẩu và xác nhận mật khẩu không khớp.");
+            return;
+          }
+
+          // Thêm logic để gửi dữ liệu đến server ở đây
+
+          alert("Đăng ký thành công!");
+        });
+
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          window.location.href = "implement.html"; // Thay 'implement.html' bằng URL của trang quản lý
+        });
+
+      fetch("địa chỉ server/đường dẫn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          password: password,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+          alert("Đăng ký thành công!");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Có lỗi xảy ra trong quá trình đăng ký.");
+        });
+    </script>
+  </body>
+</html>

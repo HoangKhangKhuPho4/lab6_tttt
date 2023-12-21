@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xtra Blog</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <!-- https://fontawesome.com/ -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/templatemo-xtra-blog.css" rel="stylesheet" />
+    <!--
+    
+TemplateMo 553 Xtra Blog
+
+https://templatemo.com/tm-553-xtra-blog
+
+-->
+  </head>
+  <style>
+    #backToTopBtn {
+      display: none; /* Ẩn nút cho đến khi cần thiết */
+      position: fixed; /* Nút sẽ cố định so với viewport */
+      bottom: 20px; /* Khoảng cách từ dưới cùng của viewport */
+      right: 30px; /* Khoảng cách từ phải của viewport */
+      z-index: 99; /* Đảm bảo nút nằm trên hầu hết các phần tử khác */
+      border: none; /* Không có viền */
+      outline: none; /* Không có đường viền ngoại quan khi tập trung */
+      background-color: #007bff; /* Màu nền */
+      color: white; /* Màu chữ */
+      cursor: pointer; /* Hiển thị con trỏ như một biểu tượng click */
+      padding: 15px; /* Khoảng cách bên trong */
+      border-radius: 10px; /* Bo góc */
+    }
+
+    #backToTopBtn:hover {
+      background-color: #0056b3; /* Màu khi hover */
+    }
+
+    p.tm-mb-80 {
+      color: #f1f5f9; /* Màu chữ màu trắng nhạt */
+      font-size: 18px; /* Kích thước font */
+      line-height: 1.6; /* Chiều cao dòng */
+    }
+
+    a {
+      color: #fff; /* Màu trắng cho các liên kết */
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #fff; /* Màu trắng cho các tiêu đề */
+    }
+  </style>
+  <body>
+    <button id="backToTopBtn" title="Go to top">⬆️</button>
+
+    <header class="tm-header" id="tm-header">
+      <div class="tm-header-wrapper">
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="tm-site-header">
+          <div class="mb-3 mx-auto tm-site-logo">
+            <img
+              src="img/blog_voTron.png"
+              alt="Logo"
+              class="img-fluid"
+              width="200px"
+            />
+            <!-- You can keep or remove the following icon, depending on your preference -->
+          </div>
+          <h1 class="text-center">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khang Nguyễn's Story
+          </h1>
+        </div>
+        <nav class="tm-nav" id="tm-nav">
+          <ul>
+            <li class="tm-nav-item">
+              <a href="ex1.html" class="tm-nav-link">
+                <i class="fas fa-home"></i>
+                Blog Home
+              </a>
+            </li>
+            <li class="tm-nav-item active">
+              <a href="post.html" class="tm-nav-link">
+                <i class="fas fa-pen"></i>
+                Single Post
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="about_xtra.html" class="tm-nav-link">
+                <i class="fas fa-users"></i>
+                About Xtra
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="contact.html" class="tm-nav-link">
+                <i class="far fa-comments"></i>
+                Contact Us
+              </a>
+            </li>
+
+            <li class="tm-nav-item">
+              <a href="lab6.html" class="tm-nav-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="tm-mb-65">
+          <a
+            href="https://www.facebook.com/profile.php?id=100088292157574"
+            class="tm-social-link"
+          >
+            <i class="fab fa-facebook tm-social-icon"></i>
+          </a>
+          <a href="https://twitter.com" class="tm-social-link">
+            <i class="fab fa-twitter tm-social-icon"></i>
+          </a>
+          <a href="https://instagram.com" class="tm-social-link">
+            <i class="fab fa-instagram tm-social-icon"></i>
+          </a>
+          <a href="https://linkedin.com" class="tm-social-link">
+            <i class="fab fa-linkedin tm-social-icon"></i>
+          </a>
+        </div>
+        <p class="tm-mb-80 pr-5 text-white">
+          " Khang Nguyễn's Story là trang web đa năng về truyện tranh, manga và
+          anime. Trang web cung cấp một thư viện truyện phong phú với hàng ngàn
+          bộ truyện các thể loại dành cho độc giả mọi lứa tuổi. Các series
+          truyện nổi tiếng như One Piece, Naruto, Dragon Ball... đều được cập
+          nhật nhanh chóng sau khi ra chap mới. Bên cạnh đó, trang web có chuyên
+          mục bài viết review, phân tích các bộ truyện tiêu biểu. Mục multimedia
+          bao gồm video hay artwork về các nhân vật. Khang Nguyễn's Story sở hữu
+          cộng đồng người hâm mộ đông đảo và tích cực. Thông qua các hoạt động
+          tương tác trực tuyến, trang web giúp lan tỏa và phát triển văn hóa đọc
+          truyện tại địa phương."
+        </p>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <main class="tm-main">
+        <!-- Search form -->
+        <div class="row tm-row">
+          <div class="col-12">
+            <form
+              method="GET"
+              class="form-inline tm-mb-80 tm-search-form"
+              action="https://www.google.com/search"
+              target="_blank"
+            >
+              <input
+                class="form-control tm-search-input"
+                name="q"
+                type="text"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <button class="tm-search-button" type="submit">
+                <i class="fas fa-search tm-search-icon" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="row tm-row">
+          <div class="col-12">
+            <hr class="tm-hr-primary tm-mb-55" />
+            <!-- Video player 1422x800 -->
+            <video width="954" height="535" controls class="tm-mb-40">
+              <source src="video/ninja_-_83274 (540p).mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div class="row tm-row">
+          <div class="col-12">
+            <h2 class="tm-color-primary tm-post-title">Featured Comics</h2>
+            <!-- Thêm các hình ảnh và liên kết đến truyện tranh ở đây -->
+          </div>
+        </div>
+
+        <div class="row tm-row">
+          <div class="col-lg-8 tm-post-col">
+            <div class="tm-post-full">
+              <div class="mb-4">
+                <h2 class="pt-2 tm-color-primary tm-post-title">
+                  Featured Comic: [Comic Title]
+                </h2>
+                <p class="tm-mb-40">
+                  [Release Date] posted by [Author or Publisher]
+                </p>
+                <p>
+                  Dive into the exciting world of [Comic Title], a thrilling
+                  [Genre] comic that brings together an epic tale of [Brief
+                  Description of the Comic's Plot or Theme]. With its vivid
+                  artwork and captivating storyline, [Comic Title] is sure to
+                  engage fans of all ages.
+                </p>
+                <p>
+                  [Further Description of the Comic]. Explore the adventures of
+                  [Main Characters], as they navigate through [Key Elements of
+                  the Story]. This comic stands out with its [Unique Aspects of
+                  the Comic, e.g., Art Style, Storytelling Approach].
+                </p>
+                <span class="d-block text-right tm-color-primary">
+                  Tags: [Related Tags or Genres]
+                </span>
+              </div>
+
+              <!-- Comments -->
+              <div>
+                <h2 class="tm-color-primary tm-post-title">Comments</h2>
+                <hr class="tm-hr-primary tm-mb-45" />
+                <div class="tm-comment tm-mb-45">
+                  <figure class="tm-comment-figure">
+                    <img
+                      src="img/comment-1.jpg"
+                      alt="Image"
+                      class="mb-2 rounded-circle img-thumbnail"
+                    />
+                    <figcaption class="tm-color-primary text-center">
+                      Mark Sonny
+                    </figcaption>
+                  </figure>
+                  <div>
+                    <p>
+                      One Piece không đơn thuần là một bộ truyện về hành trình
+                      tìm kho báu của Luffy. Đó là câu chuyện về ước mơ, tình
+                      bạn và sức mạnh của đồng đội. Luffy không chỉ đơn thuần
+                      muốn trở thành Vua Hải Tặc, mà còn mong muốn mang lại hòa
+                      bình và tự do cho thế giới. Điều đó thể hiện qua việc anh
+                      sẵn sàng liều mình bảo vệ những người anh coi là bạn. Tình
+                      bạn sâu sắc ấy chính là động lực giúp băng Mũ Rơm vượt qua
+                      biết bao hiểm nguy. One Piece còn là câu chuyện về sức
+                      mạnh của đồng đội. Mỗi thành viên trong băng Mũ Rơm đều có
+                      ước mơ và hoài bão riêng. Nhưng khi kết hợp lại, họ tạo
+                      nên một sức mạnh vô song, có thể chinh phục mọi thử thách
+                      trên biển cả. Đó chính là ý nghĩa của câu nói nổi tiếng:
+                      "Một mình tôi yếu đuối, cả nhóm chúng tôi vững vàng". Với
+                      những ý nghĩa sâu sắc ấy, không lạ khi One Piece có thể
+                      chinh phục được hàng triệu độc giả trên khắp thế giới suốt
+                      25 năm qua. Và hành trình còn tiếp tục...
+                    </p>
+                    <div class="d-flex justify-content-between">
+                      <a href="#" class="tm-color-primary">REPLY</a>
+                      <span class="tm-color-primary">June 14, 2020</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="tm-comment-reply tm-mb-45">
+                  <hr />
+                  <div class="tm-comment">
+                    <figure class="tm-comment-figure">
+                      <img
+                        src="img/comment-2.jpg"
+                        alt="Image"
+                        class="mb-2 rounded-circle img-thumbnail"
+                      />
+                      <figcaption class="tm-color-primary text-center">
+                        Jewel Soft
+                      </figcaption>
+                    </figure>
+                    <p>
+                      Doraemon đã trở thành ký ức tuổi thơ đẹp đẽ của nhiều thế
+                      hệ. "Trẻ thơ không thuộc về một mình tôi hay bạn. Chúng
+                      chỉ thuộc về bầu trời tuổi thơ - vốn bao la, thanh cao và
+                      trong lành" - Hiểu Doraemon như vậy thì tôi cũng nhận ra
+                      rằng, tuổi thơ của chúng ta luôn cần sự bảo bọc. Có thể
+                      Nobita và Doraemon không còn nữa, nhưng hàng triệu Nobita
+                      và Doraemon khác vẫn hiện hữu. Họ sẽ lan tỏa hơi ấm yêu
+                      thương. Dù tương lai có nhiều bão tố thế nào, ngọn đèn
+                      tuổi thơ cũng vẫn cháy mãi trong trái tim. Doraemon không
+                      chỉ nhân văn mà còn vô cùng nhân ái - luôn sát cánh cùng
+                      người bạn nhỏ bé dễ bị tổn thương. Động cơ giúp đỡ của
+                      Doraemon cũng rất trong sáng - đơn giản chỉ là vì thấy
+                      Nobita quá khổ. Vậy nên đừng buồn mà hãy vui lên. Nụ cười
+                      và niềm vui tuổi thơ vẫn tỏa sáng như vạn năm trước đây
+                      vậy.
+                    </p>
+                  </div>
+                  <span class="d-block text-right tm-color-primary"
+                    >June 21, 2020</span
+                  >
+                </div>
+                <form
+                  id="contactForm"
+                  action="javascript:void(0);"
+                  method="POST"
+                  class="mb-5 ml-auto mr-0 tm-contact-form"
+                >
+                  <div class="form-group row mb-4">
+                    <label
+                      for="name"
+                      class="col-sm-3 col-form-label text-right tm-color-primary"
+                      >Name</label
+                    >
+                    <div class="col-sm-9">
+                      <input
+                        class="form-control mr-0 ml-auto"
+                        name="name"
+                        id="name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row mb-4">
+                    <label
+                      for="email"
+                      class="col-sm-3 col-form-label text-right tm-color-primary"
+                      >Email</label
+                    >
+                    <div class="col-sm-9">
+                      <input
+                        class="form-control mr-0 ml-auto"
+                        name="email"
+                        id="email"
+                        type="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row mb-4">
+                    <label
+                      for="subject"
+                      class="col-sm-3 col-form-label text-right tm-color-primary"
+                      >Subject</label
+                    >
+                    <div class="col-sm-9">
+                      <input
+                        class="form-control mr-0 ml-auto"
+                        name="subject"
+                        id="subject"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row mb-5">
+                    <label
+                      for="message"
+                      class="col-sm-3 col-form-label text-right tm-color-primary"
+                      >Message</label
+                    >
+                    <div class="col-sm-9">
+                      <textarea
+                        class="form-control mr-0 ml-auto"
+                        name="message"
+                        id="message"
+                        rows="8"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row text-right">
+                    <div class="col-12">
+                      <button
+                        class="tm-btn tm-btn-primary tm-btn-small"
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <aside class="col-lg-4 tm-aside-col">
+            <div class="tm-post-sidebar">
+              <hr class="mb-3 tm-hr-primary" />
+              <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+              <ul class="tm-mb-75 pl-5 tm-category-list">
+                <li>
+                  <a href="superhero-comics.html" class="tm-color-primary"
+                    >Superhero Comics</a
+                  >
+                </li>
+                <li><a href="manga.html" class="tm-color-primary">Manga</a></li>
+                <li>
+                  <a href="graphic-novels.html" class="tm-color-primary"
+                    >Graphic Novels</a
+                  >
+                </li>
+                <li>
+                  <a href="webcomics.html" class="tm-color-primary"
+                    >Webcomics</a
+                  >
+                </li>
+                <li>
+                  <a href="sci-fi-comics.html" class="tm-color-primary"
+                    >Sci-Fi Comics</a
+                  >
+                </li>
+                <li>
+                  <a href="fantasy-comics.html" class="tm-color-primary"
+                    >Fantasy Comics</a
+                  >
+                </li>
+                <li>
+                  <a href="classic-comics.html" class="tm-color-primary"
+                    >Classic Comics</a
+                  >
+                </li>
+                <li>
+                  <a href="indie-comics.html" class="tm-color-primary"
+                    >Indie Comics</a
+                  >
+                </li>
+              </ul>
+
+              <hr class="mb-3 tm-hr-primary" />
+              <h2 class="tm-mb-40 tm-post-title tm-color-primary">
+                Những Truyện Tranh bán chạy hot trending
+              </h2>
+              <a
+                href="https://thamtu-conan.blogspot.com/search/label/Conan%20T%E1%BA%ADp%201"
+                class="d-block tm-mb-40"
+              >
+                <figure>
+                  <img
+                    src="img/conan.jpg"
+                    alt="Thám Tử lừng danh Conan"
+                    class="mb-3 img-fluid"
+                  />
+                  <figcaption class="tm-color-primary">
+                    Thám Tử Lừng Danh Conan
+                  </figcaption>
+                </figure>
+              </a>
+              <a
+                href="https://truyenqqvn.com/truyen-tranh/jujutsu-kaisen-chu-thuat-hoi-chien-5058-chap-1.html"
+                class="d-block tm-mb-40"
+              >
+                <figure>
+                  <img
+                    src="img/gojo"
+                    width="250px"
+                    alt="Gojo Comic"
+                    class="mb-3 img-fluid"
+                  />
+                  <figcaption class="tm-color-primary">
+                    Jujutsu Kaisen
+                  </figcaption>
+                </figure>
+              </a>
+              <a
+                href="https://www.nettruyenus.com/truyen-tranh/thanh-guom-diet-quy/chap-1/244900"
+                class="d-block tm-mb-40"
+              >
+                <figure>
+                  <img
+                    src="img/Yan.jpg"
+                    alt="Yan Comic"
+                    class="mb-3 img-fluid"
+                  />
+                  <figcaption class="tm-color-primary">
+                    Thanh Gươm Diệt Quỷ: Kimetsu no Yaiba
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+          </aside>
+        </div>
+        <footer class="row tm-row">
+          <hr class="col-12" />
+          <div class="col-md-6 col-12 tm-color-gray">
+            Design:
+            <a
+              rel="nofollow"
+              target="_parent"
+              href="https://www.facebook.com/profile.php?id=100088292157574"
+              class="tm-external-link"
+              >Nguyễn Lê Hoàng Khang</a
+            >
+          </div>
+          <div class="col-md-6 col-12 tm-color-gray tm-copyright">
+            © Copyright 2023 Nguyễn Lê Hoàng Khang. All Rights Reserved
+            22130116@st.hcmuaf.edu.vn
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/templatemo-script.js"></script>
+    <script>
+      // Khi người dùng cuộn xuống 20px từ đầu tài liệu, hiển thị nút
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("backToTopBtn").style.display = "block";
+        } else {
+          document.getElementById("backToTopBtn").style.display = "none";
+        }
+      }
+
+      // Khi người dùng click vào nút, cuộn trở lại đầu trang
+      document
+        .getElementById("backToTopBtn")
+        .addEventListener("click", function () {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var subject = document.getElementById("subject").value;
+          var message = document.getElementById("message").value;
+
+          var mailtoLink =
+            "mailto:hoangkhangbalmer@gmail.com?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(
+              "Name: " + name + "\nEmail: " + email + "\nMessage: " + message
+            );
+
+          window.location.href = mailtoLink;
+        });
+    </script>
+  </body>
+</html>

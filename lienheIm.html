@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên Hệ Chúng Tôi</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      #contact {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: #333;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #555;
+      }
+      #homeBtn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: #008cba;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #homeBtn:hover {
+        background: #0079a1;
+        transform: translateY(-2px);
+        box-shadow: 2px 4px 5px #444;
+      }
+
+      .facebook-contact-button {
+        display: inline-block;
+        background-color: #4267b2; /* Màu xanh của Facebook */
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+
+      .facebook-contact-button:hover {
+        background-color: #365899; /* Màu xanh đậm hơn */
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="homeBtn">Quay lại trang Quản Lý</button>
+    <section id="contact">
+      <h2>Liên hệ với chúng tôi</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="contact-name">Họ và Tên:</label>
+          <input
+            type="text"
+            id="contact-name"
+            name="name"
+            required
+            placeholder="Nhập họ và tên"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email:</label>
+          <input
+            type="email"
+            id="contact-email"
+            name="email"
+            required
+            placeholder="Nhập email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Tin Nhắn:</label>
+          <textarea
+            id="contact-message"
+            name="message"
+            required
+            placeholder="Nhập tin nhắn của bạn"
+          ></textarea>
+        </div>
+        <button type="submit">Gửi Tin Nhắn</button>
+        <a
+          href="https://www.facebook.com/profile.php?id=100088292157574"
+          target="_blank"
+          class="facebook-contact-button"
+        >
+          <i class="bi bi-facebook"></i> Liên hệ qua Facebook
+        </a>
+      </form>
+    </section>
+    <script>
+      // Lấy element button
+      const homeBtn = document.getElementById("homeBtn");
+
+      // Xử lý sự kiện click
+      homeBtn.addEventListener("click", function () {
+        // Chuyển hướng về trang implement.html
+        location.href = "implement.html";
+      });
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+
+          var name = document.getElementById("contact-name").value;
+          var email = document.getElementById("contact-email").value;
+          var message = document.getElementById("contact-message").value;
+
+          var emailBody =
+            "Họ và Tên: " +
+            name +
+            "%0D%0A" + // %0D%0A là mã cho dòng mới trong email
+            "Email: " +
+            email +
+            "%0D%0A" +
+            "Tin Nhắn: " +
+            message;
+
+          var mailtoLink =
+            "mailto:hoangkhangbalmer@gmail.com?subject=Liên Hệ Từ Website&body=" +
+            emailBody;
+
+          window.location.href = mailtoLink; // Chuyển người dùng đến trình soạn thảo email với thông tin đã điền
+        });
+    </script>
+  </body>
+</html>

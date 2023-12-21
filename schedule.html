@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lịch Làm Việc Quán Cà Phê</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        text-align: center;
+      }
+
+      .schedule-container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      td {
+        text-align: center;
+      }
+      #homeBtn {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #homeBtn:hover {
+        background: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="schedule-container">
+      <h1>Lịch Làm Việc Quán Cà Phê</h1>
+      <button id="homeBtn">Quay lại trang Quản Lý</button>
+      <table id="coffeeSchedule">
+        <!-- Nội dung bảng được tạo bằng JavaScript -->
+      </table>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const days = ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"];
+        const times = ["8:00 - 12:00", "14:00 - 18:00"];
+        const table = document.getElementById("coffeeSchedule");
+
+        let tableHTML = "<tr><th>Ngày</th><th>Giờ Làm Việc</th></tr>";
+
+        days.forEach((day) => {
+          times.forEach((time) => {
+            tableHTML += `<tr><td>${day}</td><td>${time}</td></tr>`;
+          });
+        });
+
+        table.innerHTML = tableHTML;
+      });
+
+      const homeBtn = document.getElementById("homeBtn");
+
+      homeBtn.onclick = function () {
+        location.href = "implement.html"; //đường dẫn trang chủ
+      };
+    </script>
+  </body>
+</html>

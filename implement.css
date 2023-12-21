@@ -1,0 +1,201 @@
+#booking-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-group label,
+.form-group input,
+.form-group textarea {
+  width: 100%;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.submit-btn button {
+  padding: 10px 20px;
+}
+/* CSS cho toàn bộ trang */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS cho header và menu */
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+/* CSS cho các section trong main */
+section {
+  margin: 20px;
+}
+footer {
+  background-color: #333;
+  color: white;
+  padding-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #f76b1c; /* Màu sắc khi hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 20px;
+  border-top: 1px solid #444;
+}
+
+footer form input,
+footer form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+footer form button {
+  padding: 10px 20px;
+  background-color: #f76b1c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+footer form button:hover {
+  background-color: #e65a19;
+}
+nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #f0f0f0; /* Màu nền khi hover */
+  color: #333; /* Màu chữ khi hover */
+  border-bottom: 2px solid #333; /* Thêm đường viền dưới */
+}
+.table-icon {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.table-icon:hover {
+  background-color: #f0f0f0;
+}
+.table-icon.selected {
+  background-color: #4caf50; /* Màu của bàn khi được chọn */
+  color: white;
+}
+
+.success-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: fadeInOut 3s;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+}
+.button-hover-effect {
+  background-color: #f76b1c; /* Màu nền ban đầu */
+  color: white; /* Màu chữ ban đầu */
+  transition: background-color 0.3s, color 0.3s;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.button-hover-effect:hover {
+  background-color: #e65a19; /* Màu nền khi rê chuột */
+  color: #f0f0f0; /* Màu chữ khi rê chuột */
+}
+.button-transform-effect {
+  transition: transform 0.3s; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.button-transform-effect:hover {
+  transform: scale(1.05); /* Phóng to 5% khi rê chuột */
+}

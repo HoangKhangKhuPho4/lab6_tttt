@@ -1,0 +1,629 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.resume {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar,
+.main-content {
+  flex: 1; /* Chia làm 2 nửa đều nhau */
+  padding: 20px;
+}
+
+.sidebar {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-pic {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-me,
+.skills,
+.language {
+  margin-bottom: 10px;
+}
+
+.skills-section,
+.language-section,
+.passions-section {
+  border: 1px solid #ccc; /* Đây là màu xám nhạt, bạn có thể điều chỉnh màu sắc nếu bạn muốn */
+
+  padding: 10px; /* Thêm khoảng trắng bên trong viền */
+  margin: 10px 0; /* Thêm khoảng trắng giữa các phần */
+  border-radius: 5px; /* Làm mềm các góc của đường viền */
+}
+.profile-pic {
+  width: 150px; /* Điều chỉnh chiều rộng ảnh */
+
+  height: auto; /* Tự động điều chỉnh chiều cao dựa trên chiều rộng */
+
+  border-radius: 50%; /* Tạo hiệu ứng ảnh tròn, bạn có thể bỏ nếu không thích */
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng bóng cho ảnh, tạo sự nổi bật */
+}
+
+/* Cài đặt màu chung cho trang */
+body {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: Arial, sans-serif;
+}
+
+.resume {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cài đặt cho thanh bên (sidebar) */
+.sidebar {
+  background-color: #e0f5ff; /* màu xanh dương nhạt */
+  padding: 20px;
+}
+
+.sidebar h3,
+.sidebar h4,
+.sidebar strong {
+  color: #0073e6; /* màu xanh dương đậm */
+}
+
+.sidebar img,
+.sidebar p img {
+  margin-bottom: 15px;
+}
+
+.sidebar p {
+  color: #777777; /* màu xám nhạt */
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Cài đặt cho nội dung chính */
+.main-content h1,
+.main-content h2,
+.main-content h4 {
+  color: #0073e6; /* màu xanh dương đậm */
+}
+
+a {
+  color: #00a859; /* màu xanh lá cây */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0073e6; /* màu xanh dương đậm */
+}
+/* Điều chỉnh khoảng cách cho từng mục trong sidebar */
+.sidebar h3 {
+  margin-top: 30px; /* Điều chỉnh khoảng cách ở trên */
+  margin-bottom: 15px; /* Điều chỉnh khoảng cách ở dưới */
+}
+
+/* Điều chỉnh khoảng cách giữa các mục con trong danh sách */
+.sidebar ul {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li {
+  margin-bottom: 5px; /* Thêm khoảng cách giữa các mục con */
+}
+
+/* Thêm khoảng cách giữa các phần tử trong sidebar */
+.sidebar p,
+.sidebar ul {
+  margin-bottom: 27px;
+}
+.profile-pic:hover {
+  transform: scale(1.05); /* Phóng to ảnh một chút khi rê chuột lên trên */
+  transition: all 0.3s; /* Hiệu ứng chuyển đổi mượt mà */
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+a,
+.profile-pic,
+h1,
+h2,
+h3,
+h4 {
+  transition: all 0.3s;
+}
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover {
+  color: #005bb5; /* Một tông màu xanh dương đậm hơn */
+}
+@media (max-width: 768px) {
+  .resume {
+    flex-direction: column;
+  }
+  .sidebar,
+  .main-content {
+    flex: initial;
+    width: 100%;
+  }
+}
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: white;
+  border-radius: 5px;
+  display: none; /* ẩn đi ban đầu */
+  z-index: 1000; /* Đảm bảo nút luôn nằm trên cùng */
+}
+/* Style cho toàn bộ trang */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+/* Style cho sidebar */
+.sidebar {
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+/* Hiệu ứng di chuột cho các liên kết */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Chức năng "Quay lại đầu trang" */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #444;
+}
+/* Navbar styles */
+.navbar {
+  background-color: #005bb5;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+.contact-form {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #555;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #333; /* Màu của biểu tượng. Thay đổi theo mong muốn */
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0077b6; /* Màu khi rê chuột lên biểu tượng. Thay đổi theo mong muốn */
+}
+.header-container {
+  background-color: #3498db; /* Chọn màu nền tùy ý */
+  text-align: center;
+  padding: 20px; /* Thêm padding để tạo khoảng cách xung quanh hình ảnh và tiêu đề */
+}
+
+.title {
+  color: #ffffff; /* Chọn màu chữ tùy ý */
+  font-size: 28px; /* Kích thước chữ tùy ý */
+}
+/* CSS */
+.navbar a:hover {
+  color: #ff5733; /* Màu sắc thay đổi khi di chuột qua */
+  transition: color 0.3s ease; /* Thời gian chuyển đổi và kiểu chuyển đổi */
+}
+/* CSS */
+.slide-in {
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Ví dụ: Điều chỉnh vị trí của navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Hiển thị các liên kết dọc khi trên điện thoại */
+  }
+  /* Thêm các điều chỉnh khác cần thiết cho các phần khác của trang */
+}
+/* Ví dụ: Sử dụng rem cho kích thước font */
+body {
+  font-size: 16px;
+}
+
+/* Sử dụng % cho kích thước hình ảnh */
+.profile-pic {
+  width: 100%;
+  max-width: 200px; /* Giới hạn chiều rộng tối đa của hình ảnh */
+}
+#search-icon {
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+.navbar i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+footer {
+  background-color: #333;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around; /* Phân bổ các phần tử đều nhau trên toàn bộ footer */
+  align-items: start; /* Căn chỉnh các phần tử bắt đầu từ cùng một điểm ở phía trên */
+  flex-wrap: wrap; /* Cho phép các phần tử chuyển xuống hàng mới nếu không đủ chỗ */
+}
+
+.footer-section {
+  margin: 10px; /* Tạo khoảng cách giữa các phần */
+  min-width: 150px; /* Đảm bảo mỗi phần có đủ không gian */
+}
+
+/* Phong cách cho màn hình nhỏ hơn */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-section {
+    margin: 10px 0; /* Căn chỉnh margin cho màn hình nhỏ */
+  }
+}
+
+.footer-bottom {
+  margin-top: 20px; /* Tạo khoảng cách giữa nội dung chính của footer và phần bản quyền */
+  text-align: center;
+  font-size: 0.8em;
+}
+.resume {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Tỉ lệ 1:2 giữa sidebar và nội dung chính */
+  gap: 20px; /* Khoảng cách giữa các cột */
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .resume {
+    grid-template-columns: 1fr; /* Trên màn hình nhỏ, chỉ sử dụng 1 cột */
+  }
+}
+.resume {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Tỉ lệ 1:2 giữa sidebar và nội dung chính */
+  gap: 20px; /* Khoảng cách giữa các cột */
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .resume {
+    grid-template-columns: 1fr; /* Trên màn hình nhỏ, chỉ sử dụng 1 cột */
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333; /* Màu chữ chính */
+  background-color: #fff; /* Màu nền */
+}
+
+.navbar,
+.footer {
+  background-color: #333; /* Màu nền thanh điều hướng và footer */
+}
+
+a,
+.navbar a,
+.footer a {
+  color: #0073e6; /* Màu liên kết */
+}
+
+a:hover,
+.navbar a:hover,
+.footer a:hover {
+  color: #005bb5;
+}
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Chuyển navbar thành dạng cột */
+  }
+
+  .navbar a {
+    display: block; /* Hiển thị liên kết dạng khối */
+    width: 100%;
+  }
+}
+a:hover {
+  text-decoration: underline; /* Gạch chân liên kết khi hover */
+}
+
+.btn {
+  transition: background-color 0.3s ease; /* Chuyển màu nền nút bấm mượt mà */
+}
+
+.btn:hover {
+  background-color: #555; /* Màu nền nút bấm khi hover */
+}
+.latest-blog-posts {
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.latest-blog-posts h3 {
+  margin-bottom: 15px;
+}
+
+.blog-post {
+  margin-bottom: 10px;
+}
+.portfolio {
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.project {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.project img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.project-info h4 {
+  margin: 0;
+}
+.social-media-widget {
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.main-content,
+.right-sidebar {
+  float: left;
+  padding: 15px;
+}
+
+.main-content {
+  width: 60%;
+}
+
+.right-sidebar {
+  width: 35%;
+  margin-left: 5%;
+}
+.contact-form {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #555;
+}
+/* Navbar styles */
+.navbar {
+  background-color: #f5f5f5;
+}
+
+.navbar a {
+  color: #333;
+}
+
+.navbar a:hover {
+  background-color: #eee;
+  color: #005bb5;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    display: block;
+    width: 100%;
+  }
+}
+.contact-form {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #555;
+}

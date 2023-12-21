@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xtra Blog</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <!-- https://fontawesome.com/ -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/templatemo-xtra-blog.css" rel="stylesheet" />
+    <!--
+    
+TemplateMo 553 Xtra Blog
+
+https://templatemo.com/tm-553-xtra-blog
+
+-->
+  </head>
+  <style>
+    .author-description {
+      max-height: 100px; /* Hoặc chiều cao cố định nào đó */
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .author-description.expanded {
+      max-height: 1000px; /* Một giá trị đủ lớn để hiển thị toàn bộ nội dung */
+    }
+
+    .read-more-btn {
+      background-color: #007bff; /* Màu nền cho nút */
+      color: white; /* Màu chữ cho nút */
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .read-more-btn:hover {
+      background-color: #0056b3; /* Màu khi hover */
+    }
+
+    #backToTopBtn {
+      display: none; /* Ẩn nút cho đến khi cần thiết */
+      position: fixed; /* Nút sẽ cố định so với viewport */
+      bottom: 20px; /* Khoảng cách từ dưới cùng của viewport */
+      right: 30px; /* Khoảng cách từ phải của viewport */
+      z-index: 99; /* Đảm bảo nút nằm trên hầu hết các phần tử khác */
+      border: none; /* Không có viền */
+      outline: none; /* Không có đường viền ngoại quan khi tập trung */
+      background-color: #007bff; /* Màu nền */
+      color: white; /* Màu chữ */
+      cursor: pointer; /* Hiển thị con trỏ như một biểu tượng click */
+      padding: 15px; /* Khoảng cách bên trong */
+      border-radius: 10px; /* Bo góc */
+    }
+
+    #backToTopBtn:hover {
+      background-color: #0056b3; /* Màu khi hover */
+    }
+
+    p.tm-mb-80 {
+      color: #f1f5f9; /* Màu chữ màu trắng nhạt */
+      font-size: 18px; /* Kích thước font */
+      line-height: 1.6; /* Chiều cao dòng */
+    }
+
+    a {
+      color: #fff; /* Màu trắng cho các liên kết */
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #fff; /* Màu trắng cho các tiêu đề */
+    }
+  </style>
+  <body>
+    <button id="backToTopBtn" title="Go to top">⬆️</button>
+
+    <header class="tm-header" id="tm-header">
+      <div class="tm-header-wrapper">
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="tm-site-header">
+          <div class="mb-3 mx-auto tm-site-logo">
+            <img
+              src="img/blog_voTron.png"
+              alt="Logo"
+              class="img-fluid"
+              width="200px"
+            />
+            <!-- You can keep or remove the following icon, depending on your preference -->
+          </div>
+          <h1 class="text-center">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khang Nguyễn's Story
+          </h1>
+        </div>
+        <nav class="tm-nav" id="tm-nav">
+          <ul>
+            <li class="tm-nav-item">
+              <a href="ex1.html" class="tm-nav-link">
+                <i class="fas fa-home"></i>
+                Blog Home
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="post.html" class="tm-nav-link">
+                <i class="fas fa-pen"></i>
+                Single Post
+              </a>
+            </li>
+            <li class="tm-nav-item active">
+              <a href="about_xtra.html" class="tm-nav-link">
+                <i class="fas fa-users"></i>
+                About Xtra
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="contact.html" class="tm-nav-link">
+                <i class="far fa-comments"></i>
+                Contact Us
+              </a>
+            </li>
+
+            <li class="tm-nav-item">
+              <a href="lab6.html" class="tm-nav-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="tm-mb-65">
+          <a href="https://facebook.com" class="tm-social-link">
+            <i class="fab fa-facebook tm-social-icon"></i>
+          </a>
+          <a href="https://twitter.com" class="tm-social-link">
+            <i class="fab fa-twitter tm-social-icon"></i>
+          </a>
+          <a href="https://instagram.com" class="tm-social-link">
+            <i class="fab fa-instagram tm-social-icon"></i>
+          </a>
+          <a href="https://linkedin.com" class="tm-social-link">
+            <i class="fab fa-linkedin tm-social-icon"></i>
+          </a>
+        </div>
+        <p class="tm-mb-80 pr-5 text-white">
+          " Khang Nguyễn's Story là trang web đa năng về truyện tranh, manga và
+          anime. Trang web cung cấp một thư viện truyện phong phú với hàng ngàn
+          bộ truyện các thể loại dành cho độc giả mọi lứa tuổi. Các series
+          truyện nổi tiếng như One Piece, Naruto, Dragon Ball... đều được cập
+          nhật nhanh chóng sau khi ra chap mới. Bên cạnh đó, trang web có chuyên
+          mục bài viết review, phân tích các bộ truyện tiêu biểu. Mục multimedia
+          bao gồm video hay artwork về các nhân vật. Khang Nguyễn's Story sở hữu
+          cộng đồng người hâm mộ đông đảo và tích cực. Thông qua các hoạt động
+          tương tác trực tuyến, trang web giúp lan tỏa và phát triển văn hóa đọc
+          truyện tại địa phương."
+        </p>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <main class="tm-main">
+        <!-- Search form -->
+        <!-- Search form -->
+        <div class="row tm-row">
+          <div class="col-12">
+            <form
+              method="GET"
+              class="form-inline tm-mb-80 tm-search-form"
+              action="https://www.google.com/search"
+              target="_blank"
+            >
+              <input
+                class="form-control tm-search-input"
+                name="q"
+                type="text"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <button class="tm-search-button" type="submit">
+                <i class="fas fa-search tm-search-icon" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="row tm-row tm-mb-45">
+          <div class="col-12">
+            <hr class="tm-hr-primary tm-mb-55" />
+            <img src="img/TongHop.png" alt="Image" class="img-fluid" />
+          </div>
+        </div>
+        <div class="row tm-row tm-mb-40">
+          <div class="col-12">
+            <div class="mb-4">
+              <h2 class="pt-2 tm-mb-40 tm-color-primary tm-post-title">
+                My biography
+              </h2>
+              <p class="mb-0 tm-line-height-short author-description">
+                Đây là câu chuyện về Nguyễn Lê Hoàng Khang - một chàng trai trẻ
+                có niềm đam mê lớn với truyện tranh và quyết tâm theo đuổi ước
+                mơ trở thành một họa sĩ truyện tranh chuyên nghiệp: Khang sinh
+                ra và lớn lên tại một ngôi làng nhỏ yên bình. Từ bé, cậu đã say
+                mê vẽ vời và thích đọc truyện tranh. Những bộ truyện Nhật Bản
+                đầu tiên được Khang đọc là Doraemon và Dragon Ball. Chính những
+                bộ truyện này đã thôi thúc niềm đam mê vẽ truyện tranh trong
+                Khang. Khi học cấp 3, Khang bắt đầu tự vẽ truyện tranh và sáng
+                tác câu chuyện cho riêng mình. Cậu say mê nghiên cứu các kỹ
+                thuật vẽ manga và luyện tập không ngừng. Tuy nhiên do gia cảnh
+                khó khăn, sau khi tốt nghiệp phổ thông Khang đành phải bỏ dở ước
+                mơ để đi làm thuê. 5 năm sau, nhờ tiết kiệm và cố gắng, Khang
+                quyết định theo học một khoá học về truyện tranh tại Thành phố.
+                Tại đây, Khang được học tập nâng cao kỹ năng vẽ và kể chuyện
+                cũng như tiếp xúc với nhiều họa sĩ, biên tập viên truyện tranh
+                chuyên nghiệp. Sau khi tốt nghiệp, Khang bắt đầu đăng tải truyện
+                tranh lên mạng và nhận được nhiều phản hồi tích cực từ độc giả.
+                Niềm đam mê thuở nhỏ giờ đây đã trở thành sự nghiệp, công việc
+                mà Khang có thể theo đuổi với tất cả tâm huyết và nhiệt huyết
+                của mình. Hiện tại, sau hơn 10 năm nỗ lực không ngừng, ước mơ
+                trở thành họa sĩ chuyên nghiệp của Khang đã dần trở thành hiện
+                thực. Cậu vẫn đang miệt mài theo đuổi đam mê và khát khao chinh
+                phục những đỉnh cao mới trong nghệ thuật truyện tranh. <br />
+                <br />
+                Bước vào thế giới truyện tranh chuyên nghiệp, Khang không chỉ
+                dừng lại ở việc tạo ra những bộ truyện hấp dẫn mà còn mở rộng
+                kiến thức của mình về lịch sử nghệ thuật truyện tranh và văn hóa
+                pop Á-Âu. Cậu thường xuyên tham gia các hội thảo và workshop để
+                học hỏi từ những người tiền bối, đồng thời giao lưu với cộng
+                đồng người hâm mộ qua các sự kiện truyện tranh lớn. Nhận thấy
+                tầm quan trọng của việc kết hợp giữa nghệ thuật truyền thống và
+                công nghệ số, Khang đã bắt đầu thử nghiệm với việc sử dụng phần
+                mềm vẽ kỹ thuật số, mở ra một cánh cửa mới cho phong cách vẽ của
+                mình. Điều này không chỉ giúp cậu tối ưu hóa quy trình làm việc
+                mà còn tạo ra những trang truyện có chất lượng hình ảnh cao, thu
+                hút đông đảo độc giả trẻ. Không lâu sau, những tác phẩm của
+                Khang bắt đầu được các nhà xuất bản trong nước và quốc tế chú ý.
+                Cậu đã ký hợp đồng xuất bản cho bộ truyện đầu tay của mình, và
+                không chỉ thành công về mặt thương mại mà còn nhận được nhiều
+                giải thưởng nghệ thuật. Với lòng kiên trì và sự sáng tạo không
+                ngừng, Khang đã trở thành một nguồn cảm hứng cho nhiều họa sĩ
+                trẻ khác. Cậu không ngần ngại chia sẻ kinh nghiệm và khuyến
+                khích những người mới bắt đầu rằng, bất kể hoàn cảnh nào, chỉ
+                cần có đam mê và quyết tâm, mọi ước mơ đều có thể trở thành hiện
+                thực. Ngày nay, Khang không chỉ là một họa sĩ truyện tranh được
+                yêu mến mà còn là một diễn giả, một người thầy, truyền đạt niềm
+                đam mê của mình cho thế hệ tiếp theo, góp phần làm phong phú
+                thêm diện mạo của nền truyện tranh hiện đại.
+              </p>
+              <button class="read-more-btn">Xem thêm</button>
+            </div>
+          </div>
+        </div>
+        <div class="row tm-row tm-mb-120">
+          <!-- Background Column -->
+          <div class="col-lg-4 tm-about-col">
+            <div class="tm-bg-gray tm-about-pad">
+              <div class="text-center tm-mt-40 tm-mb-60">
+                <i class="fas fa-book-reader fa-4x tm-color-primary"></i>
+              </div>
+              <h2 class="mb-3 tm-color-primary tm-post-title">
+                Lịch Sử và Đam Mê
+              </h2>
+              <p class="mb-0 tm-line-height-short">
+                Blog Truyện Tranh là nơi sinh động của những câu chuyện huyền ảo
+                và cuộc phiêu lưu trong trí tưởng tượng, mở ra bởi Nguyễn Lê
+                Hoàng Khang với mong muốn chia sẻ niềm đam mê này với mọi người.
+              </p>
+            </div>
+          </div>
+
+          <!-- Teamwork Column -->
+          <div class="col-lg-4 tm-about-col">
+            <div class="tm-bg-gray tm-about-pad">
+              <div class="text-center tm-mt-40 tm-mb-60">
+                <i class="fas fa-users fa-4x tm-color-primary"></i>
+              </div>
+              <h2 class="mb-3 tm-color-primary tm-post-title">
+                Sức Mạnh Từ Sự Hợp Tác
+              </h2>
+              <p class="mb-0 tm-line-height-short">
+                Đội ngũ tại Blog Truyện Tranht, gồm các họa sĩ, biên kịch, và
+                nhà phê bình, cùng nhau xây dựng nên những thế giới mới, nhân
+                vật sống động, và câu chuyện đáng nhớ.
+              </p>
+            </div>
+          </div>
+
+          <!-- Core Value Column -->
+          <div class="col-lg-4 tm-about-col">
+            <div class="tm-bg-gray tm-about-pad">
+              <div class="text-center tm-mt-40 tm-mb-60">
+                <i class="fas fa-heart fa-4x tm-color-primary"></i>
+              </div>
+              <h2 class="mb-3 tm-color-primary tm-post-title">
+                Triết Lý Cốt Lõi
+              </h2>
+              <p class="mb-0 tm-line-height-short">
+                Chúng tôi tin vào sức mạnh của trí tưởng tượng và sự sáng tạo,
+                cam kết mang đến những trải nghiệm đọc truyện tranh chất lượng
+                cao, tôn vinh và phát huy nghệ thuật truyện tranh.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row tm-row tm-mb-60">
+          <div class="col-12">
+            <hr class="tm-hr-primary tm-mb-55" />
+          </div>
+          <div class="col-lg-6 tm-mb-60 tm-person-col">
+            <div class="media tm-person">
+              <img
+                src="img/Hiromu Arakawa.jpg"
+                width="300px"
+                alt="Image"
+                class="img-fluid mr-4"
+              />
+              <div class="media-body">
+                <h2 class="tm-color-primary tm-post-title mb-2 author-name">
+                  Hiromu Arakawa
+                </h2>
+                <h3 class="tm-h3 mb-3 author-title">
+                  <b>Manga artist/Japanese comic author</b>
+                </h3>
+                <p class="mb-0 tm-line-height-short author-description">
+                  Hiromu Arakawa, được biết đến qua tác phẩm nổi tiếng
+                  "Fullmetal Alchemist", quản lý một blog cá nhân gần gũi với
+                  người hâm mộ mang tên "Hiromu Arakawa Official". Thông qua
+                  hình ảnh và các bản phác thảo định kỳ, Arakawa cho chúng ta
+                  cái nhìn sâu sắc vào thế giới nội tâm phong phú của mình cũng
+                  như quy trình lao động sáng tạo không ngừng nghỉ. Bà cũng
+                  thường xuyên chia sẻ những câu chuyện thú vị xoay quanh đời
+                  tư, sự nghiệp và đam mê nghệ thuật của mình. Được kết nối mật
+                  thiết với người hâm mộ, Hiromu Arakawa còn cung cấp nhiều
+                  thông tin hữu ích về các sự kiện sắp tới cũng như việc phát
+                  hành truyện mới. Chắc chắn đây sẽ là không gian trực tuyến thú
+                  vị đối với những ai yêu mến Fullmetal Alchemist.
+                </p>
+                <button class="read-more-btn">Xem thêm</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 tm-mb-60 tm-person-col">
+            <div class="media tm-person">
+              <img
+                src="img/rumiko_takahashi.jpg"
+                width="300px"
+                alt="Image"
+                class="img-fluid mr-4"
+              />
+              <div class="media-body">
+                <h2 class="tm-color-primary tm-post-title mb-2">
+                  Rumiko Takahashi
+                </h2>
+                <h3 class="tm-h3 mb-3"><b>Manga artist/Queen of manga</b></h3>
+                <p class="mb-0 tm-line-height-short author-description">
+                  Rumic World - Không gian sáng tạo của Takahashi Rumiko Với
+                  "Rumic World", Rumiko Takahashi mở ra một cánh cửa để người
+                  hâm mộ bước vào thế giới nội tâm phong phú cũng như quá trình
+                  sáng tạo miệt mài của bà. Thông qua hình ảnh và bản phác thảo,
+                  chúng ta được chiêm ngưỡng những ý tưởng nảy sinh từ trí tưởng
+                  tượng táo bạo của Takahashi, và cả hành trình chuyển hóa chúng
+                  thành những tác phẩm vĩ đại. Bên cạnh đó, Takahashi còn dành
+                  thời gian tương tác, lắng nghe và chia sẻ cùng độc giả - những
+                  người bạn đồng hành cùng bà trong hành trình nghệ thuật. Qua
+                  những bài viết mang màu sắc cá nhân, chúng ta càng hiểu hơn về
+                  con người, sự nghiệp và đam mê nghệ thuật manga của bà. Rumic
+                  World chắc chắn sẽ là nguồn cảm hứng vô tận cho các họa sĩ
+                  truyện tranh tương lai.
+                </p>
+                <button class="read-more-btn">Xem thêm</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 tm-mb-60 tm-person-col">
+            <div class="media tm-person">
+              <img
+                src="img/img_author_Doraemon"
+                width="300px"
+                alt="Image"
+                class="img-fluid mr-4"
+              />
+              <div class="media-body">
+                <h2 class="tm-color-primary tm-post-title mb-2">
+                  Fujiko F. Fujio
+                </h2>
+                <h3 class="tm-h3 mb-3">
+                  <b>Manga artist/Co-founder of Fujiko Fujio manga group</b>
+                </h3>
+                <p class="mb-0 tm-line-height-short author-description">
+                  Đây là tập hợp những truyện ngắn thuộc thể loại SF chưa từng
+                  được dịch sang tiếng Việt của tác giả Fujiko F. Fujio với nét
+                  vẽ kodomo quen thuộc đáng yêu không thể nhầm lẫn với tác giả
+                  khác. Qua các câu chuyện tuy ngắn nhưng chứa nhiều tầng nghĩa
+                  này, các bạn sẽ thấy được những giá trị của ước mơ, tình cảm
+                  gia đình, tình bạn, tình yêu đôi lứa... với những cái kết tươi
+                  sáng hướng đến đối tượng độc giả là thanh thiếu niên, bên cạnh
+                  đó là những câu chuyện vô cùng sâu sắc dành cho người trưởng
+                  thành, hàm chứa lượng kiến thức khổng lồ liên quan đến tâm
+                  linh, luân hồi chuyển thế, triết học, vũ trụ, biến dị
+                  không-thời gian... Hãy cùng tôi dõi theo từng trang truyện để
+                  thưởng thức một tác phẩm xuất sắc của người họa sĩ tài hoa
+                  Fujiko F. Fujio nhé !!
+                </p>
+                <button class="read-more-btn">Xem thêm</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 tm-mb-60 tm-person-col">
+            <div class="media tm-person">
+              <img
+                src="img/img_oda.jpg"
+                width="300px"
+                alt="Image"
+                class="img-fluid mr-4"
+              />
+              <div class="media-body">
+                <h2 class="tm-color-primary tm-post-title mb-2">
+                  Eiichiro Oda
+                </h2>
+                <h3 class="tm-h3 mb-3">
+                  <b>Manga artist/Author of One Piece manga</b>
+                </h3>
+                <p class="mb-0 tm-line-height-short author-description">
+                  Oro Jackson là blog cá nhân do chính tác giả One Piece - Oda
+                  Eiichiro - lập ra để chia sẻ các bức phác thảo, hình ảnh độc
+                  quyền về quá trình sáng tác truyện của ông. Với thiết kế đơn
+                  giản, gam màu vàng - đen mang phong cách hải tặc, blog thu hút
+                  hàng triệu lượt truy cập mỗi ngày từ người hâm mộ toàn cầu.
+                  Nội dung chủ yếu là những bức phác thảo nhân vật, cảnh quan
+                  cùng ý tưởng ban đầu của Oda dành cho các nhân vật và cốt
+                  truyện One Piece. Đây được xem là nguồn cập nhật thông tin độc
+                  quyền và đáng tin cậy nhất từ phía tác giả series ăn khách
+                  nhất nhì thế giới hiện nay.
+                </p>
+                <button class="read-more-btn">Xem thêm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="row tm-row">
+          <hr class="col-12" />
+          <div class="col-md-6 col-12 tm-color-gray">
+            Design:
+            <a
+              rel="nofollow"
+              target="_parent"
+              href="https://www.facebook.com/profile.php?id=100088292157574"
+              class="tm-external-link"
+              >Nguyễn Lê Hoàng Khang</a
+            >
+          </div>
+          <div class="col-md-6 col-12 tm-color-gray tm-copyright">
+            © Copyright 2023 Nguyễn Lê Hoàng Khang. All Rights Reserved
+            22130116@st.hcmuaf.edu.vn
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/templatemo-script.js"></script>
+
+    <script>
+      document.querySelectorAll(".read-more-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.previousElementSibling;
+
+          // Chuyển đổi trạng thái mở rộng
+          content.classList.toggle("expanded");
+
+          // Cập nhật văn bản của nút
+          button.textContent = content.classList.contains("expanded")
+            ? "Thu gọn"
+            : "Xem thêm";
+        });
+      });
+
+      // Khi người dùng cuộn xuống 20px từ đầu tài liệu, hiển thị nút
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("backToTopBtn").style.display = "block";
+        } else {
+          document.getElementById("backToTopBtn").style.display = "none";
+        }
+      }
+
+      // Khi người dùng click vào nút, cuộn trở lại đầu trang
+      document
+        .getElementById("backToTopBtn")
+        .addEventListener("click", function () {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+
+      $(document).ready(function () {
+        $(".tm-search-input").on("input", function () {
+          var searchQuery = $(this).val();
+
+          // Gửi truy vấn tìm kiếm đến server qua AJAX
+          $.ajax({
+            url: "/search", // Đường dẫn đến API tìm kiếm của bạn
+            type: "GET",
+            data: { query: searchQuery },
+            success: function (data) {
+              // Xử lý và hiển thị kết quả tìm kiếm
+              $("#searchResults").empty(); // Xóa kết quả tìm kiếm cũ
+              data.forEach(function (item) {
+                // Tạo và thêm kết quả mới vào #searchResults
+                $("#searchResults").append(
+                  '<div class="search-result-item">' + item.title + "</div>"
+                );
+              });
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

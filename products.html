@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang sản phẩm</title>
+    <link rel="stylesheet" href="products.css" />
+  </head>
+  <body>
+    <button id="homeButton">Quay lại trang Quản lý</button>
+    <h1>Sản phẩm</h1>
+
+    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." />
+    <button id="searchButton">Tìm kiếm</button>
+
+    <section id="product-list">
+      <div class="product">
+        <img src="img/capheden.jpg" alt="Cà phê đen" />
+        <!-- Đặt đường dẫn đến hình ảnh và mô tả thay thế -->
+        <h3>Cà phê đen</h3>
+        <p>Giá: 20.000 VNĐ</p>
+        <button onclick="addToCart('Cà phê đen', 20000)">Thêm vào giỏ</button>
+        <td><button onclick="removeFromCart('Cà phê đen')">Xóa</button></td>
+      </div>
+
+      <div class="product">
+        <img src="img/caphesua.jpg" alt="Cà phê sữa" />
+        <!-- Đặt đường dẫn đến hình ảnh và mô tả thay thế -->
+        <h3>Cà phê sữa</h3>
+        <p>Giá: 25.000 VNĐ</p>
+        <button onclick="addToCart('Cà phê sữa', 25000)">Thêm vào giỏ</button>
+        <td><button onclick="removeFromCart('Cà phê sữa')">Xóa</button></td>
+      </div>
+
+      <div class="product">
+        <img src="img/caphedaxoay.jpg" alt="Cà phê đá xoay" />
+        <!-- Đặt đường dẫn đến hình ảnh và mô tả thay thế -->
+        <h3>Cà phê đá xoay</h3>
+        <p>Giá: 30.000 VNĐ</p>
+        <button onclick="addToCart('Cà phê đá xoay', 30000)">
+          Thêm vào giỏ
+        </button>
+        <td><button onclick="removeFromCart('Cà phê đá xoay')">Xóa</button></td>
+      </div>
+
+      <div class="product">
+        <img src="img/caphecotdua.jpg" alt="Cà phê cốt dừa" />
+        <!-- Đặt đường dẫn đến hình ảnh và mô tả thay thế -->
+        <h3>Cà phê cốt dừa</h3>
+        <p>Giá: 35.000 VNĐ</p>
+        <button onclick="addToCart('Cà phê cốt dừa', 35000)">
+          Thêm vào giỏ
+        </button>
+        <td><button onclick="removeFromCart('Cà phê cốt dừa')">Xóa</button></td>
+      </div>
+
+      <div class="product">
+        <img src="img/machiato.jpg" alt="Machiato" />
+        <!-- Đặt đường dẫn đến hình ảnh và mô tả thay thế -->
+        <h3>Machiato</h3>
+        <p>Giá: 100.000 VNĐ</p>
+        <button onclick="addToCart('machiato', 100000)">Thêm vào giỏ</button>
+        <td><button onclick="removeFromCart('machiato')">Xóa</button></td>
+      </div>
+
+      <div class="product">
+        <img src="img/latte.jpg" alt="latte" />
+        <!-- Đặt đường dẫn đến hình ảnh và mô tả thay thế -->
+        <h3>latte</h3>
+        <p>Giá: 200.000 VNĐ</p>
+        <button onclick="addToCart('latte', 200000)">Thêm vào giỏ</button>
+        <td><button onclick="removeFromCart('latte')">Xóa</button></td>
+      </div>
+
+      <div class="product">
+        <img src="img/mocha.jpg" alt="Mocha" />
+        <!-- Đặt đường dẫn đến hình ảnh và mô tả thay thế -->
+        <h3>Mocha</h3>
+        <p>Giá: 500.000 VNĐ</p>
+        <button onclick="addToCart('Mocha', 500000)">Thêm vào giỏ</button>
+        <td><button onclick="removeFromCart('Mocha')">Xóa</button></td>
+      </div>
+
+      <!-- Thêm các sản phẩm khác ở đây -->
+    </section>
+
+    <section id="cart">
+      <h2>Giỏ hàng</h2>
+
+      <table>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+          <th>Xóa</th>
+        </tr>
+        <!-- Các sản phẩm đã thêm sẽ được hiển thị ở đây -->
+      </table>
+
+      <p>Tổng tiền: <span id="total">0</span> VNĐ</p>
+
+      <button id="checkoutButton" onclick="handleCheckout()">Thanh toán</button>
+      <!-- Hộp Thông Báo Đếm Ngược -->
+      <div id="countdownModal" class="countdown-modal">
+        <div class="countdown-content">
+          <p>Đang xử lý...</p>
+          <p id="countdownTimer">3</p>
+        </div>
+      </div>
+    </section>
+    <div id="overlay"></div>
+    <div id="content">
+      <div id="reviewPanel" style="display: none">
+        <div id="reviewBox">
+          <span id="closeButton">&#10005;</span>
+          <div id="reviewContent">
+            <h3>Vui lòng đánh giá sản phẩm</h3>
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            />
+
+            <div id="ratings">
+              <i class="fa fa-star" data-value="1" data-rated="false"></i>
+              <i class="fa fa-star" data-value="2" data-rated="false"></i>
+              <i class="fa fa-star" data-value="3" data-rated="false"></i>
+              <i class="fa fa-star" data-value="4" data-rated="false"></i>
+              <i class="fa fa-star" data-value="5" data-rated="false"></i>
+            </div>
+          </div>
+          <div class="buttons-container">
+            <button id="reviewButton">Đánh giá</button>
+            <button id="noReviewButton">Không Đánh Giá</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript code can be added here
+      let cartItems = [];
+      let lastSelectedItemName = null;
+
+      function addToCart(productName, price) {
+        // Kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa
+        const existingItem = cartItems.find(
+          (item) => item.name === productName
+        );
+
+        if (existingItem) {
+          // Nếu sản phẩm đã tồn tại, tăng số lượng và cập nhật tổng giá
+          existingItem.quantity++;
+          existingItem.totalPrice = existingItem.quantity * price;
+        } else {
+          // Nếu sản phẩm chưa có trong giỏ hàng, thêm nó vào
+          cartItems.push({
+            name: productName,
+            price: price,
+            quantity: 1,
+            totalPrice: price,
+          });
+        }
+
+        updateCart(); // Cập nhật giỏ hàng
+      }
+
+      let canRemove = true; // Biến để kiểm soát việc xóa
+      function removeFromCart(productName) {
+        if (canRemove) {
+          const index = cartItems.findIndex(
+            (item) => item.name === productName
+          );
+          if (index !== -1 && cartItems[index].quantity > 0) {
+            cartItems[index].quantity--;
+            cartItems[index].totalPrice =
+              cartItems[index].quantity * cartItems[index].price;
+            updateCart();
+            startRemoveCooldown(); // Bắt đầu thời gian chờ sau khi xóa
+          }
+        } else {
+          alert("Vui lòng đợi trong vài giây trước khi xóa tiếp!");
+        }
+      }
+      function startRemoveCooldown() {
+        canRemove = false;
+        let timeLeft = 3;
+        const countdownModal = document.getElementById("countdownModal");
+        const countdownTimer = document.getElementById("countdownTimer");
+
+        countdownModal.style.display = "block"; // Hiển thị modal
+        countdownTimer.innerText = `Vui lòng đợi  ${timeLeft} giây để có thể hủy sản phẩm đã mua`; // Cập nhật thông báo
+
+        const interval = setInterval(() => {
+          timeLeft--;
+          countdownTimer.innerText = `Vui lòng đợi  ${timeLeft} giây để có thể hủy sản phẩm đã mua`; // Cập nhật thông báo
+
+          if (timeLeft < 0) {
+            clearInterval(interval);
+            countdownModal.style.display = "none"; // Ẩn modal
+            canRemove = true;
+          }
+        }, 1000);
+      }
+
+      function updateCart() {
+        const cartTable = document.querySelector("#cart table");
+        let cartHTML = `
+    <tr>
+      <th>Sản phẩm</th>
+      <th>Giá</th>
+      <th>Số lượng</th>
+      <th>Thành tiền</th>
+      <th>Xóa</th>
+    </tr>
+  `;
+
+        cartItems.forEach((item) => {
+          cartHTML += `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.price} VNĐ</td>
+        <td>${item.quantity}</td>
+        <td>${item.totalPrice} VNĐ</td>
+        <td><button onclick="removeFromCart('${item.name}')">Xóa</button></td>
+      </tr>
+    `;
+        });
+
+        cartTable.innerHTML = cartHTML;
+
+        // Tính tổng tiền
+        let total = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
+
+        // Cập nhật giao diện
+        document.getElementById("total").innerText = total + " VNĐ";
+      }
+
+      const removeItemButton = document.getElementById("removeItemButton");
+      removeItemButton.addEventListener("click", () => {
+        if (lastSelectedItemName) {
+          removeFromCart(lastSelectedItemName);
+          lastSelectedItemName = null; // Đặt lại tên sản phẩm sau khi xóa
+        } else {
+          alert("Không có sản phẩm nào được chọn để xóa!");
+        }
+      });
+
+      function handleCheckout() {
+        let total = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
+        if (total > 0) {
+          if (confirm("Bạn có muốn thanh toán " + total + " VNĐ không?")) {
+            alert(
+              "Bạn đã thanh toán thành công đơn hàng với giá trị " +
+                total +
+                " VNĐ"
+            );
+            cartItems = [];
+            updateCart();
+          }
+        } else {
+          alert("Giỏ hàng của bạn đang trống!");
+        }
+      }
+    </script>
+
+    <script src="products.js"></script>
+  </body>
+</html>

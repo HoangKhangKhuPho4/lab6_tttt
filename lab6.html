@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Style cho các tab */
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+
+      /* Style cho các nút trong tab */
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+
+      /* Thay đổi màu nền khi hover */
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      /* Tạo màu nền cho tab được chọn */
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      /* Style cho nội dung các tab */
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+
+      .tabcontent iframe {
+        width: 100%; /* Chiều rộng tối đa */
+        height: 3000px; /* Chiều cao cố định hoặc có thể sử dụng height:auto; */
+        border: none; /* Loại bỏ viền */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Menu Labs</h2>
+
+    <div class="tab">
+      <button onclick="openEx1Tab('Ex1Design')">Ex1</button>
+
+      <button onclick="openEx2Tab('Ex2Design')">Ex2</button>
+      <button onclick="goToHomePage()">Back to Home</button>
+    </div>
+    <div id="Ex1" class="tabcontent">
+      <div class="tab">
+        <button class="tablinks" onclick="openSubTab('Ex1Design')">
+          Design
+        </button>
+        <button class="tablinks" onclick="openImplementationTab()">
+          Implementation
+        </button>
+      </div>
+
+      <div id="Ex1Design" class="tabcontent">
+        <h3>Ex1 Design</h3>
+        <p>Mô tả ngắn gọn về thiết kế Ex1 trên giấy và Figma.</p>
+
+        <h4>Thiết Kế Trên Giấy</h4>
+        <img
+          src="img/z_pattern.png"
+          alt="Ex1 Paper Design"
+          style="width: 100%; height: auto"
+        />
+        <a
+          href="templatemo_553_xtra_blog/F_pattern.jpg"
+          download="Ex1_Paper_Design"
+          >Download Ex1 Paper Design</a
+        >
+
+        <h4>Thiết Kế Trên Figma</h4>
+        <img
+          src="path_to_figma_design_ex1.jpg"
+          alt="Ex1 Figma Design"
+          style="width: 100%; height: auto"
+        />
+        <a href="download_link_figma_ex1" download="Ex1_Figma_Design"
+          >Download Ex1 Figma Design</a
+        >
+      </div>
+
+      <div id="Ex1Implementation" class="tabcontent">
+        <h3>Ex1 Implementation</h3>
+        <p>Nội dung hiện thực Ex1.</p>
+        <!-- Thêm iframe ở đây -->
+        <iframe
+          src="ex1.html"
+          style="width: 100%; height: 600px; border: none"
+        ></iframe>
+      </div>
+    </div>
+
+    <div id="Ex2" class="tabcontent">
+      <div class="tab">
+        <button class="tablinks" onclick="openDesignTab('Ex2Design')">
+          Design
+        </button>
+        <button class="tablinks" onclick="openEx2ImplementationTab()">
+          Implementation
+        </button>
+      </div>
+
+      <div id="Ex2Design" class="tabcontent">
+        <h3>Ex2 Design</h3>
+        <p>Mô tả ngắn gọn về thiết kế Ex2 trên giấy và Figma.</p>
+
+        <h4>Thiết Kế Trên Giấy</h4>
+        <img
+          src="img/F_pattern.jpg"
+          alt="Ex2 Paper Design"
+          style="width: 100%; height: auto"
+        />
+        <a href="download_link_paper_ex2" download="Ex2_Paper_Design"
+          >Download Ex2 Paper Design</a
+        >
+
+        <h4>Thiết Kế Trên Figma</h4>
+        <img
+          src="path_to_figma_design_ex2.jpg"
+          alt="Ex2 Figma Design"
+          style="width: 100%; height: auto"
+        />
+        <a href="download_link_figma_ex2" download="Ex2_Figma_Design"
+          >Download Ex2 Figma Design</a
+        >
+      </div>
+    </div>
+
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      var currentMainTab = null;
+      var currentSubTab = null;
+
+      function toggleTab(mainTab, defaultSubTab) {
+        if (currentMainTab === mainTab) {
+          // Đóng tab chính và sub-tab nếu tab chính đã mở
+          document.getElementById(mainTab).style.display = "none";
+          if (currentSubTab) {
+            document.getElementById(currentSubTab).style.display = "none";
+          }
+          currentMainTab = null;
+          currentSubTab = null;
+        } else {
+          // Mở tab chính và sub-tab mặc định
+          openMainTab(mainTab);
+          openSubTab(defaultSubTab);
+        }
+      }
+
+      function openSubTab(subTabName) {
+        // Điều hướng nếu nhấp vào Ex1Implementation
+        if (subTabName === "Ex1Implementation") {
+          window.location.href = "ex1.html";
+          return; // Thoát khỏi hàm sau khi điều hướng
+        }
+
+        // Đóng sub-tab hiện tại (nếu có)
+        if (currentSubTab) {
+          document.getElementById(currentSubTab).style.display = "none";
+        }
+
+        // Mở sub-tab mới và cập nhật currentSubTab
+        document.getElementById(subTabName).style.display = "block";
+        currentSubTab = subTabName;
+      }
+
+      function openMainTab(mainTab) {
+        if (currentMainTab) {
+          document.getElementById(currentMainTab).style.display = "none";
+        }
+        document.getElementById(mainTab).style.display = "block";
+        currentMainTab = mainTab;
+      }
+
+      function openTab(subTabName) {
+        // Điều hướng nếu nhấp vào Ex1Implementation
+        if (subTabName === "Ex1Implementation") {
+          window.location.href = "ex1.html";
+          return; // Thoát khỏi hàm sau khi điều hướng
+        }
+
+        // Kiểm tra xem sub-tab hiện tại có đang mở không
+        if (currentSubTab === subTabName) {
+          // Đóng sub-tab nếu nó đã mở
+          document.getElementById(subTabName).style.display = "none";
+          currentSubTab = null;
+
+          // Đóng tab chính tương ứng
+          if (currentMainTab) {
+            document.getElementById(currentMainTab).style.display = "none";
+            currentMainTab = null;
+          }
+        } else {
+          // Đóng sub-tab hiện tại (nếu có)
+          if (currentSubTab) {
+            document.getElementById(currentSubTab).style.display = "none";
+          }
+
+          // Mở sub-tab mới và cập nhật currentSubTab
+          document.getElementById(subTabName).style.display = "block";
+          currentSubTab = subTabName;
+        }
+      }
+
+      function openMainTab(mainTab) {
+        if (currentMainTab && currentMainTab !== mainTab) {
+          document.getElementById(currentMainTab).style.display = "none";
+        }
+        document.getElementById(mainTab).style.display = "block";
+        currentMainTab = mainTab;
+      }
+
+      function openSubTab(subTab) {
+        if (currentSubTab) {
+          document.getElementById(currentSubTab).style.display = "none";
+        }
+        document.getElementById(subTab).style.display = "block";
+        currentSubTab = subTab;
+      }
+
+      function openImplementationTab() {
+        window.location.href = "ex1.html";
+      }
+
+      function openEx2ImplementationTab() {
+        window.location.href = "ex2.html"; // Thay đổi URL này theo trang đích của Ex2
+      }
+      function openEx2Tab(defaultSubTab) {
+        // Đóng tab nếu đang mở
+        closeEx2Tabs();
+
+        // Mở tab mới
+        openMainTab("Ex2");
+        openSubTab(defaultSubTab);
+      }
+
+      function closeEx2Tabs() {
+        if (currentMainTab === "Ex2") {
+          document.getElementById("Ex2").style.display = "none";
+        }
+
+        if (currentSubTab === "Ex2Design") {
+          document.getElementById("Ex2Design").style.display = "none";
+        }
+      }
+      function openEx1Tab(defaultSubTab) {
+        if (currentMainTab === "Ex1") {
+          closeEx1Tabs();
+        } else {
+          openMainTab("Ex1");
+          openSubTab(defaultSubTab);
+        }
+      }
+
+      function closeEx1Tabs() {
+        if (currentMainTab === "Ex1") {
+          document.getElementById("Ex1").style.display = "none";
+        }
+
+        if (currentSubTab === "Ex1Design") {
+          document.getElementById("Ex1Design").style.display = "none";
+        }
+
+        currentMainTab = null;
+        currentSubTab = null;
+      }
+
+      // Các hàm cho tab Ex2
+      function openEx2Tab(defaultSubTab) {
+        if (currentMainTab === "Ex2") {
+          closeEx2Tabs();
+        } else {
+          openMainTab("Ex2");
+          openSubTab(defaultSubTab);
+        }
+      }
+
+      function closeEx2Tabs() {
+        if (currentMainTab === "Ex2") {
+          document.getElementById("Ex2").style.display = "none";
+        }
+
+        if (currentSubTab === "Ex2Design") {
+          document.getElementById("Ex2Design").style.display = "none";
+        }
+
+        currentMainTab = null;
+        currentSubTab = null;
+      }
+
+      function openEx2ImplementationTab() {
+        window.location.href = "ex2.html";
+      }
+
+      function openDesignTab(tabName) {
+        var designTab = document.getElementById(tabName);
+        if (designTab.style.display === "block") {
+          designTab.style.display = "none"; // Tùy chọn: Ẩn nếu đã hiển thị
+        } else {
+          // Đóng tất cả tabcontent
+          var tabcontents = document.getElementsByClassName("tabcontent");
+          for (var i = 0; i < tabcontents.length; i++) {
+            tabcontents[i].style.display = "none";
+          }
+          designTab.style.display = "block";
+        }
+      }
+
+      function goToHomePage() {
+        window.location.href = "index.html"; // Chuyển hướng đến trang chủ
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+.tab button.active {
+  background-color: #ccc;
+}
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Định nghĩa style cho nội dung tab */
+.tabcontent {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #efefef;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+ul,
+ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+strong {
+  color: #e74c3c;
+}
+
+/* Định nghĩa style cho nội dung tab */
+.tabcontent {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #efefef;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+ul,
+ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+strong {
+  color: #e74c3c;
+}
+
+/* Định nghĩa style cho nội dung tab */
+.tabcontent {
+  background-color: #f4f4f4; /* Màu nền nhẹ */
+  color: #333333; /* Màu chữ đậm để đảm bảo độ tương phản */
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box-shadow nhẹ để tạo chiều sâu */
+}
+
+h2 {
+  color: #2c3e50; /* Màu đậm hơn để tạo sự tách biệt */
+  border-bottom: 1px solid #e7e7e7; /* Màu border nhẹ nhàng */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+ul,
+ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+strong {
+  color: #2980b9; /* Màu nổi để làm nổi bật thông tin quan trọng */
+}
+
+/* Style cho liên kết */
+a {
+  color: #3498db; /* Màu xanh dương nhẹ, dễ chịu */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Hiệu ứng khi hover */
+}
+
+/* Style cho nút (buttons) và liên kết có hành động */
+.button {
+  background-color: #3498db; /* Màu nền cho nút */
+  color: #ffffff; /* Màu chữ trên nút */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9; /* Màu khi hover */
+}
+
+/* Định nghĩa style cho nội dung tab */
+.tabcontent {
+  background-color: #f4f4f4; /* Màu nền nhẹ */
+  color: #333333; /* Màu chữ đậm để đảm bảo độ tương phản */
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box-shadow nhẹ để tạo chiều sâu */
+}
+
+h2 {
+  color: #2c3e50; /* Màu đậm hơn để tạo sự tách biệt */
+  border-bottom: 1px solid #e7e7e7; /* Màu border nhẹ nhàng */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+ul,
+ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+strong {
+  color: #2980b9; /* Màu nổi để làm nổi bật thông tin quan trọng */
+}
+
+/* Style cho liên kết */
+a {
+  color: #3498db; /* Màu xanh dương nhẹ, dễ chịu */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Hiệu ứng khi hover */
+}
+
+/* Style cho nút (buttons) và liên kết có hành động */
+.button {
+  background-color: #3498db; /* Màu nền cho nút */
+  color: #ffffff; /* Màu chữ trên nút */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9; /* Màu khi hover */
+}
+.tablinks i {
+  margin-right: 5px;
+  color: #007bff; /* Màu sắc của icon */
+}
