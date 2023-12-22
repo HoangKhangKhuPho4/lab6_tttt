@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xtra Blog</title>
+    <title>Khang Nguyễn's Story</title>
     <link rel="stylesheet" href="fontawesome/css/all.min.css" />
     <!-- https://fontawesome.com/ -->
     <link
@@ -519,6 +519,36 @@ https://templatemo.com/tm-553-xtra-blog
 
           // Redirect to page3.html
           window.location.href = "page3.html";
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Xử lý cho nút Xem thêm
+        var paragraphs = document.querySelectorAll(".tm-pt-30");
+        var maxLength = 200; // Giới hạn số ký tự
+
+        paragraphs.forEach(function (p) {
+          if (p.textContent.length > maxLength) {
+            var shortText = p.textContent.slice(0, maxLength);
+            var longText = p.textContent.slice(maxLength);
+            p.innerHTML = shortText;
+            var hiddenSpan = document.createElement("span");
+            hiddenSpan.classList.add("hidden-text");
+            hiddenSpan.innerHTML = longText;
+            p.appendChild(hiddenSpan);
+
+            var btn = document.createElement("button");
+            btn.innerHTML = "Xem thêm";
+            btn.classList.add("read-more-btn", "btn", "btn-primary", "btn-sm");
+            p.appendChild(btn);
+
+            btn.addEventListener("click", function () {
+              hiddenSpan.classList.toggle("hidden-text");
+              this.textContent = hiddenSpan.classList.contains("hidden-text")
+                ? "Xem thêm"
+                : "Thu gọn";
+            });
+          }
         });
       });
     </script>

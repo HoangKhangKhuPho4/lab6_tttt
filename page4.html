@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xtra Blog</title>
+    <title>Khang Nguyễn's Story</title>
     <link rel="stylesheet" href="fontawesome/css/all.min.css" />
     <!-- https://fontawesome.com/ -->
     <link
@@ -649,6 +649,46 @@ https://templatemo.com/tm-553-xtra-blog
         }
 
         // ... other event listeners ...
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        var maxLength = 200; // Đặt giới hạn số ký tự cho mô tả
+        var articles = document.querySelectorAll(".tm-post");
+
+        articles.forEach(function (article) {
+          var paragraphs = article.querySelectorAll("p");
+
+          paragraphs.forEach(function (paragraph) {
+            if (paragraph.textContent.length > maxLength) {
+              var shortText = paragraph.textContent.slice(0, maxLength) + "...";
+              var longText = paragraph.textContent.slice(maxLength);
+              paragraph.textContent = shortText;
+
+              var readMoreBtn = document.createElement("button");
+              readMoreBtn.textContent = "Xem thêm";
+              readMoreBtn.classList.add(
+                "read-more-btn",
+                "btn",
+                "btn-primary",
+                "btn-sm"
+              );
+              paragraph.parentNode.insertBefore(
+                readMoreBtn,
+                paragraph.nextSibling
+              );
+
+              readMoreBtn.addEventListener("click", function () {
+                if (this.textContent === "Xem thêm") {
+                  paragraph.textContent =
+                    paragraph.textContent.slice(0, maxLength) + longText;
+                  this.textContent = "Thu gọn";
+                } else {
+                  paragraph.textContent = shortText;
+                  this.textContent = "Xem thêm";
+                }
+              });
+            }
+          });
+        });
       });
     </script>
   </body>

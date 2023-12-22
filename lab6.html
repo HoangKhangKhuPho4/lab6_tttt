@@ -44,6 +44,30 @@
         height: 3000px; /* Chiều cao cố định hoặc có thể sử dụng height:auto; */
         border: none; /* Loại bỏ viền */
       }
+
+      a[download] {
+        background-color: #007bff; /* Màu nền */
+        color: #fff; /* Màu chữ */
+        padding: 10px 20px; /* Kích thước nút */
+        border: 2px solid #007bff; /* Viền nút */
+        border-radius: 5px; /* Góc bo tròn */
+        font-size: 18px; /* Cỡ chữ */
+        text-decoration: none; /* Loại bỏ gạch chân dưới chữ */
+        display: inline-block; /* Hiển thị inline để chữ không bị đẩy xuống dòng mới */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng hover */
+      }
+
+      a[download]:hover {
+        background-color: #0056b3; /* Màu nền hover */
+      }
+
+      a[download] i {
+        margin-left: 5px; /* Khoảng cách giữa chữ và biểu tượng */
+      }
+
+      img {
+        max-width: 50%;
+      }
     </style>
   </head>
   <body>
@@ -71,15 +95,15 @@
 
         <h4>Thiết Kế Trên Giấy</h4>
         <img
-          src="img/z_pattern.png"
+          src="img/DesignGiay_Ex1.jpg"
           alt="Ex1 Paper Design"
           style="width: 100%; height: auto"
         />
-        <a
-          href="templatemo_553_xtra_blog/F_pattern.jpg"
-          download="Ex1_Paper_Design"
-          >Download Ex1 Paper Design</a
-        >
+        <a href="img/DesignGiay_Ex1.jpg" download>
+          Download
+
+          <i class="fas fa-download"></i>
+        </a>
 
         <h4>Thiết Kế Trên Figma</h4>
         <img
