@@ -47,7 +47,7 @@ https://templatemo.com/tm-553-xtra-blog
     }
 
     /* a {
-      color: #fff;
+      color: #fff; 
     } */
 
     h1,
@@ -71,15 +71,16 @@ https://templatemo.com/tm-553-xtra-blog
         <div class="tm-site-header">
           <div class="mb-3 mx-auto tm-site-logo">
             <img
-              src="img/blog_voTron.png"
+              src="img/comicstt.png"
               alt="Logo"
               class="img-fluid"
-              width="200px"
+              width="180px"
             />
             <!-- You can keep or remove the following icon, depending on your preference -->
           </div>
           <h1 class="text-center">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khang Nguyễn's Story
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khang Nguyễn's
+            Story
           </h1>
         </div>
 
@@ -137,9 +138,16 @@ https://templatemo.com/tm-553-xtra-blog
           </a>
         </div>
         <p class="tm-mb-80 pr-5 text-white">
-          Xtra Blog is a multi-purpose HTML template from TemplateMo website.
-          Left side is a sticky menu bar. Right side content will scroll up and
-          down.
+          " Khang Nguyễn's Story là trang web đa năng về truyện tranh, manga và
+          anime. Trang web cung cấp một thư viện truyện phong phú với hàng ngàn
+          bộ truyện các thể loại dành cho độc giả mọi lứa tuổi. Các series
+          truyện nổi tiếng như One Piece, Naruto, Dragon Ball... đều được cập
+          nhật nhanh chóng sau khi ra chap mới. Bên cạnh đó, trang web có chuyên
+          mục bài viết review, phân tích các bộ truyện tiêu biểu. Mục multimedia
+          bao gồm video hay artwork về các nhân vật. Khang Nguyễn's Story sở hữu
+          cộng đồng người hâm mộ đông đảo và tích cực. Thông qua các hoạt động
+          tương tác trực tuyến, trang web giúp lan tỏa và phát triển văn hóa đọc
+          truyện tại địa phương."
         </p>
       </div>
     </header>
@@ -458,16 +466,26 @@ https://templatemo.com/tm-553-xtra-blog
             <nav class="tm-paging-nav d-inline-block">
               <ul>
                 <li class="tm-paging-item active">
-                  <a href="#" class="mb-2 tm-btn tm-paging-link">1</a>
+                  <a href="ex1.html" class="mb-2 tm-btn tm-paging-link">1</a>
                 </li>
                 <li class="tm-paging-item">
-                  <a href="#" class="mb-2 tm-btn tm-paging-link">2</a>
+                  <a
+                    href="page2.html"
+                    id="paging-button-2"
+                    class="mb-2 tm-btn tm-paging-link"
+                    >2</a
+                  >
                 </li>
                 <li class="tm-paging-item">
-                  <a href="#" class="mb-2 tm-btn tm-paging-link">3</a>
+                  <a href="page3.html" class="mb-2 tm-btn tm-paging-link">3</a>
                 </li>
                 <li class="tm-paging-item">
-                  <a href="#" class="mb-2 tm-btn tm-paging-link">4</a>
+                  <a
+                    href="page4.html"
+                    id="paging-button-4"
+                    class="mb-2 tm-btn tm-paging-link"
+                    >4</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -543,6 +561,62 @@ https://templatemo.com/tm-553-xtra-blog
             window.location.href = "ex1.html";
           });
         }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Xử lý nút Back To Top
+        var backToTopBtn = document.getElementById("backToTopBtn");
+        backToTopBtn.addEventListener("click", function () {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        });
+
+        window.onscroll = function () {
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
+            backToTopBtn.style.display = "block";
+          } else {
+            backToTopBtn.style.display = "none";
+          }
+        };
+
+        // Xử lý nút Prev và Next
+        var prevButton = document.querySelector(".tm-prev");
+        var nextButton = document.querySelector(".tm-next");
+
+        if (prevButton) {
+          prevButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var currentPageNumber = getCurrentPageNumber();
+
+            if (currentPageNumber <= 1) {
+              alert("Đây là trang đầu tiên, không thể quay lại trang trước.");
+            } else {
+              navigateToPreviousPage(currentPageNumber);
+            }
+          });
+        }
+
+        if (nextButton) {
+          nextButton.addEventListener("click", function () {
+            navigateToNextPage();
+          });
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Lấy nút Next bằng ID
+        var nextButton = document.getElementById("nextButton");
+
+        // Thêm sự kiện click
+        nextButton.addEventListener("click", function (e) {
+          // Ngăn chặn hành vi mặc định của thẻ <a>
+          e.preventDefault();
+
+          // Chuyển hướng đến trang page2.html
+          window.location.href = "page2.html";
+        });
       });
     </script>
   </body>
