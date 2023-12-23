@@ -1,3 +1,43 @@
+#homeButton {
+  background-color: #007bff; /* Màu xanh dương đậm */
+  color: white;
+  font-size: 20px; /* Kích thước chữ lớn hơn */
+  padding: 15px 30px; /* Đệm xung quanh chữ */
+  border-radius: 10px; /* Bo góc */
+}
+#homeButton:hover {
+  background-color: #0056b3; /* Màu tối hơn khi hover */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng xung quanh */
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#homeButton {
+  animation: pulse 2s infinite;
+}
+
+.download-btn button,
+.figma-link button {
+  background-color: #28a745; /* Màu xanh lá đậm */
+  color: white;
+  font-weight: bold;
+}
+
+.download-btn button:hover,
+.figma-link button:hover {
+  background-color: #218838; /* Màu xanh lá sáng hơn khi hover */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+}
+
 body {
   font-family: Arial, sans-serif;
 }

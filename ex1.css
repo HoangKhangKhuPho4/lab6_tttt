@@ -44,3 +44,15 @@ h2,
 h3 {
   color: #fff; /* Màu trắng cho các tiêu đề */
 }
+.download-btn button,
+.figma-link button {
+  background-color: #28a745; /* Màu xanh lá đậm */
+  color: white;
+  font-weight: bold;
+}
+
+.download-btn button:hover,
+.figma-link button:hover {
+  background-color: #218838; /* Màu xanh lá sáng hơn khi hover */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+}
