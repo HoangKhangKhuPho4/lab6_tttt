@@ -43,6 +43,42 @@ https://templatemo.com/tm-516-known
 #backToTopBtn:hover {
   background-color: #0056b3; /* Màu khi hover */
 }
+    /* CSS cho Hộp Thoại Đăng Nhập (Modal) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
      </style>
 
@@ -86,6 +122,8 @@ https://templatemo.com/tm-516-known
                          <li><a href="#testimonial" class="smoothScroll">Reviews</a></li>
                          <li><a href="#contact" class="smoothScroll">Contact</a></li>
                          <li><a href="lab6.html" class="smoothScroll">Back To Home</a></li>
+                         <li><a href="#" id="loginLink">Login</a></li>
+
 
                     </ul>
 
@@ -214,16 +252,21 @@ https://templatemo.com/tm-516-known
 
                     <div class="col-md-offset-1 col-md-4 col-sm-12">
                          <div class="entry-form">
-                              <form action="#" method="post">
+                              <form action="#" method="post" id="signup-form">
                                    <h2>Signup today</h2>
-                                   <input type="text" name="full name" class="form-control" placeholder="Full name" required="">
-
-                                   <input type="email" name="email" class="form-control" placeholder="Your email address" required="">
-
-                                   <input type="password" name="password" class="form-control" placeholder="Your password" required="">
-
+                                   <input type="text" name="fullname" class="form-control" placeholder="Full name" required>
+                               
+                                   <input type="email" name="email" class="form-control" placeholder="Your email address" required>
+                               
+                                   <input type="password" name="password" class="form-control" placeholder="Your password" required>
+                               
+                                   <!-- Thêm trường xác nhận mật khẩu -->
+                                   <input type="password" name="confirm_password" class="form-control" placeholder="Confirm your password" required>
+                               
                                    <button class="submit-btn form-control" id="form-submit">Get started</button>
-                              </form>
+                               </form>
+                               <div id="signup-notification" style="color: green;"></div>
+
                          </div>
                     </div>
 
@@ -246,10 +289,10 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="images/author-image1.jpg" class="img-responsive" alt="">
+                                   <img src="img/conga.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
-                                   <h3>Mark Wilson</h3>
+                                   <h3>Trần Thị Thanh Nga</h3>
                                    <span>I love Teaching</span>
                               </div>
                               <ul class="social-icon">
@@ -263,10 +306,10 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="images/author-image2.jpg" class="img-responsive" alt="">
+                                   <img src="img/thayCuong.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
-                                   <h3>Catherine</h3>
+                                   <h3>Đặng Kiên Cường</h3>
                                    <span>Education is the key!</span>
                               </div>
                               <ul class="social-icon">
@@ -279,10 +322,10 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="images/author-image3.jpg" class="img-responsive" alt="">
+                                   <img src="img/thayLinh.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
-                                   <h3>Jessie Ca</h3>
+                                   <h3>Võ Tấn Linh</h3>
                                    <span>I like Online Courses</span>
                               </div>
                               <ul class="social-icon">
@@ -296,10 +339,10 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="images/author-image4.jpg" class="img-responsive" alt="">
+                                   <img src="img/thayNghia.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
-                                   <h3>Andrew Berti</h3>
+                                   <h3>Bùi Đại Nghĩa</h3>
                                    <span>Learning is fun</span>
                               </div>
                               <ul class="social-icon">
@@ -313,7 +356,7 @@ https://templatemo.com/tm-516-known
                </div>
           </div>
      </section>
-
+f
 
      <!-- Courses -->
      <section id="courses">
@@ -350,7 +393,7 @@ https://templatemo.com/tm-516-known
                                                        <span>Mark Wilson</span>
                                                   </div>
                                                   <div class="courses-price">
-                                                       <a href="#"><span>USD 25</span></a>
+                                                       <a href="https://emplifi.io/?utm_source=google&utm_medium=cpc&utm_campaign=Japac-fy23-smc-ppc-google-emplifi_brand&utm_content=demo&utm_source=google&utm_medium=cpc&utm_term=social%20media%20bakers&utm_campaign=-19814343834&utm_adgroup=-144832115017&utm_adname=-651211795905&utm_content=&utm_device=c&utm_source=google&utm_medium=cpc&utm_term=social%20media%20bakers&utm_campaign={campaign}-19814343834&utm_adgroup={adgroup}-144832115017&utm_adname={adname}-651211795905&utm_content={content}&utm_device=c&gad_source=1&gclid=CjwKCAiAhJWsBhAaEiwAmrNyq03nUkFDtFWyr0aKzUFlJOCxJ335yeED1a4K1tObpFhNegWEw_HpuBoCYN8QAvD_BwE"><span>USD 25</span></a>
                                                   </div>
                                              </div>
                                         </div>
@@ -381,7 +424,7 @@ https://templatemo.com/tm-516-known
                                                        <span>Jessica</span>
                                                   </div>
                                                   <div class="courses-price">
-                                                       <a href="#"><span>USD 80</span></a>
+                                                       <a href="https://www.skillshare.com/browse/web-design"><span>USD 80</span></a>
                                                   </div>
                                              </div>
                                         </div>
@@ -412,7 +455,7 @@ https://templatemo.com/tm-516-known
                                                        <span>Catherine</span>
                                                   </div>
                                                   <div class="courses-price free">
-                                                       <a href="#"><span>Free</span></a>
+                                                       <a href="https://academy.hubspot.com/courses/content-marketing"><span>Free</span></a>
                                                   </div>
                                              </div>
                                         </div>
@@ -443,7 +486,7 @@ https://templatemo.com/tm-516-known
                                                        <span>Mark Wilson</span>
                                                   </div>
                                                   <div class="courses-price">
-                                                       <a href="#"><span>USD 45</span></a>
+                                                       <a href="https://www.ymca.org/what-we-do/youth-development/camp"><span>USD 45</span></a>
                                                   </div>
                                              </div>
                                         </div>
@@ -474,7 +517,7 @@ https://templatemo.com/tm-516-known
                                                        <span>Jessica</span>
                                                   </div>
                                                   <div class="courses-price free">
-                                                       <a href="#"><span>Free</span></a>
+                                                       <a href="https://www.edx.org/learn/business-administration/university-of-british-columbia-business-foundations"><span>Free</span></a>
                                                   </div>
                                              </div>
                                         </div>
@@ -508,7 +551,7 @@ https://templatemo.com/tm-516-known
                                              <h4>Jackson</h4>
                                              <span>Shopify Developer</span>
                                         </div>
-                                        <p>You really do help young creative minds to get quality education and professional job search assistance. I’d recommend it to everyone!</p>
+                                        <p>Cô Trần Thị Thanh Nga là người giảng viên xuất sắc, nhiệt tình và tận tâm với nghề dạy học. Cô luôn chuẩn bị bài giảng công phu, truyền đạt kiến thức một cách logic và dễ hiểu. Cô rất quan tâm tới tiến bộ của học sinh, luôn dành thời gian để giải đáp thắc mắc và khuyến khích tinh thần học tập của các em. Nhờ sự nhiệt tình và tâm huyết của cô mà lớp học luôn sôi nổi và hiệu quả. Cô thực sự là tấm gương mẫu mực để các học sinh noi theo.</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -528,7 +571,7 @@ https://templatemo.com/tm-516-known
                                              <h4>Camila</h4>
                                              <span>Marketing Manager</span>
                                         </div>
-                                        <p>Trying something new is exciting! Thanks for the amazing law course and the great teacher who was able to make it interesting.</p>
+                                        <p>Thầy Võ Tấn Linh là người thầy tài năng và kinh nghiệm. Thầy luôn chuẩn bị bài giảng cẩn thận, phân tích logic và truyền đạt kiến thức một cách rõ ràng, mạch lạc. Thầy luôn quan tâm tới tiến bộ của từng học sinh, tận tình hướng dẫn và giải đáp thắc mắc cho các em. Nhờ phương pháp giảng dạy hiệu quả của thầy mà kiến thức được các em nắm chắc và vận dụng tốt. Thầy thực sự là người thầy mẫu mực, đáng để học sinh học tập và noi gương.</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -546,7 +589,7 @@ https://templatemo.com/tm-516-known
                                              <h4>Barbie</h4>
                                              <span>Art Director</span>
                                         </div>
-                                        <p>Donec erat libero, blandit vitae arcu eu, lacinia placerat justo. Sed sollicitudin quis felis vitae hendrerit.</p>
+                                        <p>Thầy Đặng Kiên Cường là người thầy nhiệt tình, tâm huyết với nghề dạy học. Thầy luôn chuẩn bị bài giảng chu đáo, truyền đạt kiến thức sâu sắc nhưng dễ hiểu. Thầy rất quan tâm tới sự tiến bộ của học sinh, luôn tìm cách động viên và khích lệ tinh thần học tập của các em. Nhờ sự nhiệt tình và tận tâm của thầy mà các em luôn hứng thú học tập. Thầy thực sự xứng đáng là tấm gương sáng cho học sinh noi theo.</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -565,7 +608,7 @@ https://templatemo.com/tm-516-known
                                              <h4>Andrio</h4>
                                              <span>Web Developer</span>
                                         </div>
-                                        <p>Nam eget mi eu ante faucibus viverra nec sed magna. Vivamus viverra sapien ex, elementum varius ex sagittis vel.</p>
+                                        <p>Thầy Bùi Đại Nghĩa là người thầy giàu kinh nghiệm và hiểu biết. Thầy luôn chuẩn bị bài giảng kỹ lưỡng, truyền đạt kiến thức một cách logic và sinh động. Thầy rất tận tình, luôn dành thời gian để ôn tập, giải đáp thắc mắc và theo sát sự tiến bộ của từng học sinh. Nhờ phương pháp giảng dạy hiệu quả của thầy mà kiến thức được các em nắm chắc. Thầy thực sự xứng đáng là tấm gương sáng cho thế hệ học sinh.</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -717,8 +760,35 @@ document.getElementById("backToTopBtn").addEventListener("click", function() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var fullName = document.querySelector('input[name="name"]').value.trim();
+    var email = document.querySelector('input[name="email"]').value.trim();
+    var message = document.querySelector('textarea[name="message"]').value.trim();
+    
+    var subject = encodeURIComponent('Contact Form Submission from ' + fullName);
+    var emailBody = 'Full Name: ' + fullName + '%0D%0A';
+    emailBody += 'Email: ' + email + '%0D%0A';
+    emailBody += 'Message: ' + message;
+
+    window.location.href = 'mailto:22130116@st.hcmuaf.edu.vn?subject=' + subject + '&body=' + encodeURIComponent(emailBody);
+});
+
+
+   
 
      </script>
-
+    <div id="loginModal" class="modal">
+     <div class="modal-content">
+         <span class="close">&times;</span>
+         <form id="login-form">
+             <h2>Login</h2>
+             <input type="email" name="email" placeholder="Email" required>
+             <input type="password" name="password" placeholder="Password" required>
+             <button type="submit">Login</button>
+         </form>
+     </div>
+ </div>
 </body>
 </html>
