@@ -44,3 +44,17 @@
 .tabcontent.show {
   display: block;
 }
+/* Custom CSS for footer input and textarea fields */
+#footer input[type="email"],
+#footer input[type="password"],
+#footer input[type="text"],
+#footer textarea {
+  color: white; /* Changes text color to white */
+  background-color: #333; /* Optional: Changes background color if needed */
+}
+
+/* Style for placeholder text in footer input and textarea fields */
+#footer input::placeholder,
+#footer textarea::placeholder {
+  color: #bbb; /* Lighter color for placeholder text */
+}
