@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trò Chơi Trắc Nghiệm</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      .quiz-container {
+        margin: 50px auto;
+        width: 70%;
+      }
+      .question {
+        font-size: 20px;
+      }
+      .choices {
+        margin-top: 20px;
+      }
+      .choices button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 24px;
+      }
+
+      #prevQuestion {
+        margin-bottom: 10px;
+        /* Thêm các thuộc tính CSS khác ở đây nếu cần */
+      }
+
+      #backToHome,
+      #prevQuestion,
+      button[onclick="nextQuestion()"] {
+        background-color: #4caf50; /* Màu xanh lá */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      #backToHome:hover,
+      #prevQuestion:hover,
+      button[onclick="nextQuestion()"]:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6588601470c9f2407f83105f/1hiebekpo";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <div class="quiz-container">
+      <div id="question" class="question"></div>
+      <div id="choices" class="choices"></div>
+      <button id="prevQuestion" onclick="prevQuestion()">← Quay Lại</button>
+      <button onclick="nextQuestion()">Tiếp Tục</button>
+      <button id="backToHome" onclick="window.location.href='ex2.html'">
+        Back To Home
+      </button>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      var questions = [
+        {
+          question: "1 + 1 bằng bao nhiêu?",
+          choices: ["2", "3", "4", "5"],
+          answer: 0,
+        },
+        // Toán Rời Rạc
+        {
+          question: "Một đồ thị đầy đủ có 5 đỉnh có bao nhiêu cạnh?",
+          choices: ["5", "10", "15", "20"],
+          answer: 1,
+        },
+        {
+          question: "Hàm nào sau đây không phải là hàm Boolean?",
+          choices: [
+            "f(x, y) = x AND y",
+            "f(x, y) = x OR y",
+            "f(x) = NOT x",
+            "f(x, y) = x + y",
+          ],
+          answer: 3,
+        },
+        {
+          question: "Trong Java, từ khóa nào được sử dụng để kế thừa một lớp?",
+          choices: ["extends", "implements", "inherit", "super"],
+          answer: 0,
+        },
+        {
+          question:
+            "Phương thức nào được sử dụng để chuyển một chuỗi thành một số nguyên trong Java?",
+          choices: [
+            "Integer.parseInt()",
+            "Integer.toString()",
+            "String.valueOf()",
+            "Number.parseNumber()",
+          ],
+          answer: 0,
+        },
+        // Các câu hỏi mới
+        // Toán Rời Rạc
+        {
+          question:
+            "Thuật ngữ nào sau đây không liên quan đến Lý thuyết Đồ thị?",
+          choices: ["Đỉnh", "Cạnh", "Hệ số Góc", "Đường đi"],
+          answer: 2,
+        },
+        {
+          question:
+            "Trong lý thuyết tập hợp, 'Union' của hai tập hợp A và B được biểu diễn như thế nào?",
+          choices: ["A ∩ B", "A ∪ B", "A - B", "B - A"],
+          answer: 1,
+        },
+        // Lập Trình Java
+        {
+          question:
+            "Trong Java, cấu trúc lặp nào không dùng để lặp qua một dãy số?",
+          choices: ["for", "while", "do-while", "switch"],
+          answer: 3,
+        },
+        {
+          question:
+            "Câu lệnh nào sau đây dùng để ném ra một ngoại lệ trong Java?",
+          choices: ["throw", "throws", "try", "catch"],
+          answer: 0,
+        },
+        // Thêm các câu hỏi cho các chủ đề khác
+        // ...
+      ];
+
+      var currentQuestionIndex = 0;
+      var totalCorrect = 0;
+
+      function displayQuestion() {
+        var question = questions[currentQuestionIndex];
+        document.getElementById("question").textContent = question.question;
+        var choicesHtml = question.choices.map(function (choice, index) {
+          return (
+            '<button onclick="selectChoice(' +
+            index +
+            ')"' +
+            (question.answered ? " disabled" : "") +
+            ">" + // Disable nếu đã trả lời
+            choice +
+            "</button>"
+          );
+        });
+        document.getElementById("choices").innerHTML = choicesHtml.join("");
+        document.getElementById("result").textContent = question.answered
+          ? "Bạn đã trả lời câu này"
+          : "";
+      }
+
+      function selectChoice(choice) {
+        var question = questions[currentQuestionIndex];
+        if (!question.answered) {
+          if (choice === question.answer) {
+            totalCorrect++;
+            document.getElementById("result").textContent = "Đúng!";
+          } else {
+            document.getElementById("result").textContent =
+              "Sai! Đáp án đúng: " + question.choices[question.answer];
+          }
+          question.answered = true; // Đánh dấu câu hỏi đã được trả lời
+        }
+      }
+
+      function prevQuestion() {
+        if (currentQuestionIndex > 0) {
+          currentQuestionIndex--;
+          displayQuestion();
+        }
+      }
+
+      function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          displayQuestion();
+        } else {
+          document.getElementById("result").textContent =
+            "Bạn đã hoàn thành trò chơi! Số câu đúng: " +
+            totalCorrect +
+            "/" +
+            questions.length;
+          document.getElementById("question").style.display = "none";
+          document.getElementById("choices").style.display = "none";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        displayQuestion();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thảo Luận Trực Tuyến</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="discussion.css" rel="stylesheet" />
+
+    <style>
+      body {
+        background-color: #f4f4f4;
+      }
+
+      #discussion-form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      #discussions {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+
+      #discussions > div {
+        margin-top: 15px;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      /* Điều chỉnh nếu cần */
+      .btn-secondary {
+        margin-left: 10px; /* Thêm khoảng cách giữa hai nút */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center">Thảo Luận Trực Tuyến</h2>
+      <div id="discussion-form">
+        <input
+          type="text"
+          id="discussion-title"
+          class="form-control my-3"
+          placeholder="Tiêu đề chủ đề"
+        />
+        <textarea
+          id="discussion-content"
+          class="form-control my-3"
+          placeholder="Nội dung thảo luận"
+        ></textarea>
+        <button onclick="postDiscussion()" class="btn btn-primary">
+          Đăng Chủ Đề
+        </button>
+        <!-- Thêm nút Back To Home ở đây -->
+        <a href="ex2.html" class="btn btn-secondary"> Back To Home </a>
+      </div>
+      <div id="discussions" class="mt-4">
+        <!-- Các chủ đề thảo luận sẽ được hiển thị ở đây -->
+      </div>
+    </div>
+
+    <script src="discussion.js"></script>
+
+    <script>
+      function postDiscussion() {
+        var title = document.getElementById("discussion-title").value;
+        var content = document.getElementById("discussion-content").value;
+
+        // Tạo và hiển thị chủ đề mới
+        var discussionDiv = document.createElement("div");
+        discussionDiv.innerHTML =
+          "<h4>" + title + "</h4><p>" + content + "</p>";
+        document.getElementById("discussions").appendChild(discussionDiv);
+
+        // Làm trống form sau khi đăng
+        document.getElementById("discussion-title").value = "";
+        document.getElementById("discussion-content").value = "";
+      }
+      function postComment() {
+        var comment = document.getElementById("comment-input").value;
+
+        // Tạo và hiển thị bình luận
+        var commentDiv = document.createElement("div");
+        commentDiv.textContent = comment;
+        document.getElementById("comments").appendChild(commentDiv);
+
+        // Làm trống trường nhập sau khi đăng
+        document.getElementById("comment-input").value = "";
+      }
+    </script>
+  </body>
+</html>

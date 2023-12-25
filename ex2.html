@@ -21,14 +21,99 @@ https://templatemo.com/tm-516-known
      <link rel="stylesheet" href="css/font-awesome.min.css">
      <link rel="stylesheet" href="css/owl.carousel.css">
      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <meta name="description" content="Educational website providing online courses and resources">
+<meta name="keywords" content="education, online courses, e-learning">
+
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/templatemo-style.css">
      <style>
-          #backToTopBtn {
+         body {
+    font-family: 'Open Sans', sans-serif; /* Phông chữ chung */
+    color: #333; /* Màu chữ chính */
+    background: #f8f8f8; /* Màu nền */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #007bff; /* Màu sắc cho các tiêu đề */
+}
+@media (max-width: 768px) {
+    .navbar-header {
+        width: 100%;
+    }
+    .navbar-collapse {
+        width: 100%;
+    }
+}
+#student-rankings {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+#rankingsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#rankingsTable th, #rankingsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#rankingsTable th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+#rankingsTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+    /* CSS để căn giữa thử thách hàng ngày */
+#dailyChallenge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Hoặc absolute, tùy thuộc vào bố cục của trang */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; /* Hoặc bất kỳ chiều rộng nào bạn muốn */
+    padding: 20px;
+    background-color: white; /* Màu nền cho khối */
+    border: 1px solid #ddd; /* Viền nếu cần */
+    border-radius: 10px; /* Bo góc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nếu muốn */
+}
+
+/* Điều chỉnh các thành phần bên trong #dailyChallenge nếu cần */
+#dailyChallenge h2, #dailyChallenge p, #dailyChallenge input, #dailyChallenge button {
+    width: 100%; /* Chiều rộng tối đa bên trong khối */
+    margin-bottom: 10px; /* Khoảng cách giữa các phần tử */
+    text-align: center; /* Căn giữa nội dung */
+}
+.blur-background {
+    filter: blur(5px);
+}
+
+#dailyChallenge {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Đảm bảo phần thử thách nằm trên cùng */
+    background: white; /* Nền trắng để tăng độ nổi bật */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Thêm bóng để nổi bật */
+    /* Thêm các quy tắc khác nếu cần */
+}
+#backToTopBtn {
   display: none; /* Ẩn nút cho đến khi cần thiết */
   position: fixed; /* Nút sẽ cố định so với viewport */
-  bottom: 20px; /* Khoảng cách từ dưới cùng của viewport */
+  bottom: 100px; /* Khoảng cách từ dưới cùng của viewport */
   right: 30px; /* Khoảng cách từ phải của viewport */
   z-index: 99; /* Đảm bảo nút nằm trên hầu hết các phần tử khác */
   border: none; /* Không có viền */
@@ -41,8 +126,20 @@ https://templatemo.com/tm-516-known
 }
 
 #backToTopBtn:hover {
-  background-color: #0056b3; /* Màu khi hover */
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
 }
+
+.img-fade {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.img-visible {
+    opacity: 1;
+}
+
+
     /* CSS cho Hộp Thoại Đăng Nhập (Modal) */
 .modal {
     display: none; 
@@ -79,10 +176,99 @@ https://templatemo.com/tm-516-known
     text-decoration: none;
     cursor: pointer;
 }
+.slide-in {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0px);
+}
+#faq {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+#faq .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #333;
+}
+details {
+  background-color: #f6f6f6;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+details[open] {
+  background-color: #ddd;
+}
+
+summary {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+   /* CSS cho nút 'Gửi Câu Trả Lời' và 'Bỏ Qua' */
+#dailyChallenge button {
+    background-color: #007bff; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Bóng đổ */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+    cursor: pointer;
+}
+
+#dailyChallenge button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Bóng đổ khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+#dailyChallenge {
+    /* Các quy tắc CSS hiện tại của bạn ở đây */
+
+    /* Thêm đường viền đậm */
+    border: 3px solid #007bff; /* Màu sắc và độ dày của đường viền */
+    border-radius: 15px; /* Bo tròn góc của đường viền */
+}
+.blur-effect {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
 
      </style>
 
 </head>
+
+
 <button id="backToTopBtn" title="Go to top">⬆️</button>
 
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -95,6 +281,21 @@ https://templatemo.com/tm-516-known
                
           </div>
      </section>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+     (function(){
+     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+     s1.async=true;
+     s1.src='https://embed.tawk.to/6588601470c9f2407f83105f/1hiebekpo';
+     s1.charset='UTF-8';
+     s1.setAttribute('crossorigin','*');
+     s0.parentNode.insertBefore(s1,s0);
+     })();
+     </script>
+     <!--End of Tawk.to Script-->
+
 
 
      <!-- MENU -->
@@ -122,18 +323,47 @@ https://templatemo.com/tm-516-known
                          <li><a href="#testimonial" class="smoothScroll">Reviews</a></li>
                          <li><a href="#contact" class="smoothScroll">Contact</a></li>
                          <li><a href="lab6.html" class="smoothScroll">Back To Home</a></li>
-                         <li><a href="#" id="loginLink">Login</a></li>
+                         <li><a href="discussion.html" class="smoothScroll">Thảo Luận</a></li>
+                         <li><a href="quiz.html" id="QuizLink">Quiz</a></li>
+
+
+                        
+
 
 
                     </ul>
+
+                    <form class="navbar-form navbar-right" role="search" id="mySearchForm">
+                         <div class="form-group">
+                             <input type="text" class="form-control" placeholder="Tìm kiếm" id="mySearchInput">
+                         </div>
+                         <button type="submit" class="btn btn-default">Tìm</button>
+                     </form>
 
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#"><i class="fa fa-phone"></i>+84-56-7649206</a></li>
                     </ul>
+                    <li><a href="#student-rankings" class="smoothScroll">Student Ranking</a></li>
+
+
+         
                </div>
 
           </div>
      </section>
+
+      <!-- Khu vực hiển thị thử thách -->
+<div id="dailyChallenge" style="display: none;">
+     <h2>Thử Thách Hàng Ngày</h2>
+     <p id="challengeText"></p>
+     <input type="text" id="userAnswer" placeholder="Nhập câu trả lời của bạn"/>
+     <p>Thời gian còn lại: <span id="timeRemaining"></span> giây</p>
+     <button onclick="submitAnswer()">Gửi Câu Trả Lời</button>
+     <button onclick="hideChallenge()">Bỏ Qua</button>
+     <p id="feedback"></p>
+ </div>
+
+      
 
 
      <!-- HOME -->
@@ -296,7 +526,7 @@ https://templatemo.com/tm-516-known
                                    <span>I love Teaching</span>
                               </div>
                               <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="https://www.facebook.com/ngattt82" class="fa fa-facebook-square" attr="facebook icon"></a></li>
                                    <li><a href="#" class="fa fa-twitter"></a></li>
                                    <li><a href="#" class="fa fa-instagram"></a></li>
                               </ul>
@@ -306,7 +536,7 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="img/thayCuong.jpg" class="img-responsive" alt="">
+                                   <img src="img/thayCuong.jpg" class="img-fade" alt="">
                               </div>
                               <div class="team-info">
                                    <h3>Đặng Kiên Cường</h3>
@@ -322,7 +552,7 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="img/thayLinh.jpg" class="img-responsive" alt="">
+                                   <img src="img/thayLinh.jpg" class="img-fade" alt="">
                               </div>
                               <div class="team-info">
                                    <h3>Võ Tấn Linh</h3>
@@ -339,7 +569,7 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="img/thayNghia.jpg" class="img-responsive" alt="">
+                                   <img src="img/thayNghia.jpg" class="img-fade" alt="">
                               </div>
                               <div class="team-info">
                                    <h3>Bùi Đại Nghĩa</h3>
@@ -356,7 +586,31 @@ https://templatemo.com/tm-516-known
                </div>
           </div>
      </section>
-f
+
+
+      
+
+     <!-- BẢNG XẾP HẠNG HỌC VIÊN -->
+             
+  <!-- BẢNG XẾP HẠNG HỌC VIÊN -->
+<div id="student-rankings">
+     <h2>Bảng Xếp Hạng Học Viên</h2>
+     <table id="rankingsTable">
+         <thead>
+             <tr>
+                 <th>STT</th>
+                 <th>MaSV</th>
+                 <th>Họ tên</th>
+                 <th>Điểm TB</th>
+             </tr>
+         </thead>
+         <tbody>
+             <!-- Dữ liệu bảng sẽ được thêm vào đây bằng JavaScript -->
+         </tbody>
+     </table>
+ </div>
+
+      
 
      <!-- Courses -->
      <section id="courses">
@@ -368,13 +622,26 @@ f
                               <h2>Popular Courses <small>Upgrade your skills with newest courses</small></h2>
                          </div>
 
+                           <!-- Bộ lọc khóa học ở đây -->
+                <div class="course-filter">
+                    <label for="categorySelect">Chọn Danh Mục:</label>
+                    <select id="categorySelect">
+                        <option value="all">Tất Cả</option>
+                        <option value="design">Thiết Kế</option>
+                        <option value="programming">Lập Trình</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="SummerKids">Trẻ Em</option>
+
+                    </select>
+                </div>
+
                          <div class="owl-carousel owl-theme owl-courses">
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/courses-image1.jpg" class="img-responsive" alt="">
+                                                       <img src="images/courses-image1.jpg" class="img-fade" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 12 / 7 / 2018</span>
@@ -395,7 +662,7 @@ f
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/author-image1.jpg" class="img-responsive" alt="">
+                                                       <img src="images/author-image1.jpg" class="img-fade" alt="">
                                                        <span>Mark Wilson</span>
                                                   </div>
                                                   <div class="courses-price">
@@ -411,7 +678,7 @@ f
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/courses-image2.jpg" class="img-responsive" alt="">
+                                                       <img src="images/courses-image2.jpg" class="img-fade" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 20 / 7 / 2018</span>
@@ -431,7 +698,7 @@ f
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/author-image2.jpg" class="img-responsive" alt="">
+                                                       <img src="images/author-image2.jpg" class="img-fade" alt="">
                                                        <span>Jessica</span>
                                                   </div>
                                                   <div class="courses-price">
@@ -443,11 +710,11 @@ f
                               </div>
 
                               <div class="col-md-4 col-sm-4">
-                                   <div class="item">
+                                   <div class="item" >
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/courses-image3.jpg" class="img-responsive" alt="">
+                                                       <img src="images/courses-image3.jpg" class="img-fade" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 15 / 8 / 2018</span>
@@ -468,7 +735,7 @@ f
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/author-image3.jpg" class="img-responsive" alt="">
+                                                       <img src="images/author-image3.jpg" class="img-fade" alt="">
                                                        <span>Catherine</span>
                                                   </div>
                                                   <div class="courses-price free">
@@ -484,7 +751,7 @@ f
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/courses-image4.jpg" class="img-responsive" alt="">
+                                                       <img src="images/courses-image4.jpg" class="img-fade" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 10 / 8 / 2018</span>
@@ -503,9 +770,11 @@ f
                                                        Đây sẽ là kỳ nghỉ hè ý nghĩa và bổ ích cho trẻ em để vừa học vừa chơi.</p>
                                              </div>
 
+                                             
+
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/author-image1.jpg" class="img-responsive" alt="">
+                                                       <img src="images/author-image1.jpg" class="img-fade" alt="">
                                                        <span>Mark Wilson</span>
                                                   </div>
                                                   <div class="courses-price">
@@ -516,12 +785,55 @@ f
                                    </div>
                               </div>
 
+
+
+
+                              
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/courses-image5.jpg" class="img-responsive" alt="">
+                                                       <img src="img/tttn.jpg" class="img-fade" alt="">
+                                                  </div>
+                                                  <div class="courses-date">
+                                                       <span><i class="fa fa-calendar"></i> 10 / 9 / 2019</span>
+                                                       <span><i class="fa fa-clock-o"></i> 8 Hours</span>
+                                                  </div>
+                                             </div>
+
+                                             <div class="courses-detail">
+                                                  <h3><a href="#">Lập Trình Nâng Cao-Java</a></h3>
+                                                  <p>Khóa học Lập trình Java nâng cao do Cô Trần Thị Thanh Nga giảng dạy thực sự là một khóa học chất lượng và xuất sắc.
+
+                                                       Cô Nga là một giảng viên giàu kinh nghiệm và tâm huyết với nghề, luôn tận tình chỉ dẫn và hỗ trợ học viên. Cô am hiểu sâu sắc ngôn ngữ lập trình Java và thường xuyên cập nhật các kiến thức mới nhất về ngôn ngữ này.
+                                                       
+                                                       Khóa học của Cô Nga bao quát hầu hết các chủ đề nâng cao trong Java như lập trình hướng đối tượng, generic, collection framework, xử lý đa luồng, lập trình mạng, giao diện đồ họa, xử lý ngoại lệ, cơ sở dữ liệu,.... Cô giảng dạy các kiến thức một cách logic, chi tiết, dễ hiểu và linh hoạt áp dụng vào thực tế.
+                                                       
+                                                       Học viên sau khi hoàn thành khóa học sẽ có một nền tảng vững chắc về Java, có thể phát triển các ứng dụng phức tạp và làm việc hiệu quả với ngôn ngữ lập trình phổ biến này. Đây thực sự là một khóa học Java chất lượng cao mà bất kỳ ai cũng nên tham gia..</p>
+                                             </div>
+
+                                             
+
+                                             <div class="courses-info">
+                                                  <div class="courses-author">
+                                                       <img src="img/tttn_part2.jpg" class="img-fade" alt="">
+                                                       <span>Trần Thị Thanh Nga</span>
+                                                  </div>
+                                                  <div class="courses-price">
+                                                       <a href="https://www.ymca.org/what-we-do/youth-development/camp"><span>USD 45</span></a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="col-md-4 col-sm-4">
+                                   <div class="item" >
+                                        <div class="courses-thumb">
+                                             <div class="courses-top">
+                                                  <div class="courses-image">
+                                                       <img src="images/courses-image5.jpg" class="img-fade" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 5 / 10 / 2018</span>
@@ -542,7 +854,7 @@ f
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/author-image2.jpg" class="img-responsive" alt="">
+                                                       <img src="images/author-image2.jpg" class="img-fade" alt="">
                                                        <span>Jessica</span>
                                                   </div>
                                                   <div class="courses-price free">
@@ -559,6 +871,69 @@ f
           </div>
      </section>
 
+              
+
+     
+
+     <section id="faq">
+          <div class="container">
+        
+            <h2>Câu Hỏi Thường Gặp</h2>
+        
+          
+
+
+            <details>
+               <summary>Trang web có hỗ trợ cả phiên bản tiếng Việt không?</summary>
+               <p>
+                 <i class="fas fa-envelope"></i>
+                 "Có, trang web của chúng tôi hỗ trợ phiên bản tiếng Việt, giúp bạn dễ dàng truy cập và sử dụng các tính năng."               </p>
+             </details>
+
+             <details>
+               <summary>Tôi có thể học thử miễn phí không?</summary>
+               <p>
+                  <i class="fas fa-envelope"></i>
+                  "Chúng tôi cung cấp các bài học thử nghiệm miễn phí để bạn có thể trải nghiệm trước khi quyết định đăng ký khóa học."               </p>
+             </details>
+
+
+             <details>
+               <summary>Các khóa học có giáo trình và tài liệu kèm theo không?</summary>
+               <p>
+                  <i class="fas fa-envelope"></i>
+                  "Mỗi khóa học đều có giáo trình và tài liệu đầy đủ, giúp bạn dễ dàng theo dõi và học tập."               </p>
+             </details>
+
+
+             <details>
+               <summary>Tôi có thể học online mà không cần đến lớp không?</summary>
+               <p>
+                  <i class="fas fa-envelope"></i>
+                  "Chúng tôi cung cấp hình thức học online linh hoạt, cho phép bạn học mọi lúc mọi nơi mà không cần phải đến lớp."               </p>
+             </details>
+
+             <details>
+               <summary>Thời gian mở các lớp học là khi nào?</summary>
+               <p>
+                  <i class="fas fa-envelope"></i>
+                  "Các lớp học được mở định kỳ hàng tuần/tháng, và bạn có thể xem lịch cụ thể trên website của chúng tôi."               </p>
+             </details>
+
+
+             <details>
+               <summary>Các giáo viên có chứng chỉ giảng dạy không?</summary>
+               <p>
+                  <i class="fas fa-envelope"></i>
+                  "Tất cả giáo viên của chúng tôi đều có chứng chỉ giảng dạy và kinh nghiệm sư phạm, đảm bảo chất lượng giáo dục."               </p>
+             </details>
+
+           
+        
+          </div>
+        </section>
+      
+
 
      <!-- TESTIMONIAL -->
      <section id="testimonial">
@@ -574,7 +949,7 @@ f
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="images/tst-image1.jpg" class="img-responsive" alt="">
+                                             <img src="images/tst-image1.jpg" class="img-fade" alt="">
                                         </div>
                                         <div class="tst-author">
                                              <h4>Jackson</h4>
@@ -594,7 +969,7 @@ f
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="images/tst-image2.jpg" class="img-responsive" alt="">
+                                             <img src="images/tst-image2.jpg" class="img-fade" alt="">
                                         </div>
                                         <div class="tst-author">
                                              <h4>Camila</h4>
@@ -612,7 +987,7 @@ f
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="images/tst-image3.jpg" class="img-responsive" alt="">
+                                             <img src="images/tst-image3.jpg" class="img-fade" alt="">
                                         </div>
                                         <div class="tst-author">
                                              <h4>Barbie</h4>
@@ -631,7 +1006,7 @@ f
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="images/tst-image4.jpg" class="img-responsive" alt="">
+                                             <img src="images/tst-image4.jpg" class="img-fade" alt="">
                                         </div>
                                         <div class="tst-author">
                                              <h4>Andrio</h4>
@@ -682,7 +1057,7 @@ f
 
                     <div class="col-md-6 col-sm-12">
                          <div class="contact-image">
-                              <img src="images/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
+                              <img src="images/contact-image.jpg" class="img-fade" alt="Smiling Two Girls">
                          </div>
                     </div>
 
@@ -804,8 +1179,293 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     window.location.href = 'mailto:22130116@st.hcmuaf.edu.vn?subject=' + subject + '&body=' + encodeURIComponent(emailBody);
 });
 
-
+        
    
+document.getElementById('mySearchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+        var searchQuery = document.getElementById('mySearchInput').value; // Lấy giá trị từ trường nhập liệu
+        var googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery);
+        window.location.href = googleSearchUrl; // Chuyển hướng đến Google với từ khóa tìm kiếm
+    });
+
+    window.addEventListener('scroll', () => {
+    const images = document.querySelectorAll('.img-fade');
+    images.forEach(image => {
+        const imageTop = image.getBoundingClientRect().top;
+        const isVisible = imageTop < window.innerHeight;
+        if (isVisible) {
+            image.classList.add('img-visible');
+        }
+    });
+});
+window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('.slide-in');
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const isVisible = elementTop < window.innerHeight;
+        if (isVisible) {
+            element.classList.add('visible');
+        }
+    });
+});
+        // Lấy tất cả các phần tử FAQ
+const faqs = document.querySelectorAll('.faq-item');
+
+// Duyệt qua từng phần tử
+faqs.forEach(faq => {
+  // Lấy phần tử chứa câu trả lời
+  const answer = faq.querySelector('p');
+  
+  // Lấy phần tử chứa câu hỏi
+  const question = faq.querySelector('h3');
+
+  // Bật tắt câu trả lời khi click vào câu hỏi
+  question.addEventListener('click', () => {
+    if(answer.style.display === 'block') {
+      answer.style.display = 'none';
+    } else {
+      answer.style.display = 'block';
+    }
+  });
+});
+
+document.querySelectorAll('.faq-item h3').forEach(item => {
+    item.addEventListener('click', () => {
+        const answer = item.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const students = [
+        { stt: '1', maSV: '22130276', hoTen: 'TRẦN MINH THƯ', diemTB: '3.83' },
+        { stt: '2', maSV: '22130148', hoTen: 'NGUYỄN BÍCH LOAN', diemTB: '3.61' },
+        { stt: '3', maSV: '22130274', hoTen: 'NGUYỄN TẤN THÔNG', diemTB: '3.61' },
+        { stt: '4', maSV: '22130062', hoTen: 'PHÙNG KHÁNH DUY', diemTB: '3.56' },
+        { stt: '5', maSV: '22130137', hoTen: 'LÊ THỊ THỦY KIỀU', diemTB: '3.48' },
+        { stt: '6', maSV: '22130261', hoTen: 'NGUYỄN THIÊN', diemTB: '3.48' },
+        { stt: '7', maSV: '22130235', hoTen: 'NGUYỄN CHÍ SƠN', diemTB: '3.47' },
+        // Thêm các học viên khác tại đây
+    ];
+
+    const tableBody = document.getElementById('rankingsTable').getElementsByTagName('tbody')[0];
+    students.forEach((student) => {
+        let row = tableBody.insertRow();
+        let sttCell = row.insertCell(0);
+        let maSVCell = row.insertCell(1);
+        let hoTenCell = row.insertCell(2);
+        let diemTBCell = row.insertCell(3);
+
+        sttCell.innerHTML = student.stt;
+        maSVCell.innerHTML = student.maSV;
+        hoTenCell.innerHTML = student.hoTen;
+        diemTBCell.innerHTML = student.diemTB;
+    });
+});
+const challenges = [
+    { question: "2 + 2 bằng bao nhiêu?", answer: "4", timeLimit: 10 },
+    { question: "Tổ hợp của 5 phần tử lấy 3 là bao nhiêu?", answer: "10", timeLimit: 20 },
+    { question: "Có bao nhiêu cách sắp xếp 4 đối tượng khác nhau?", answer: "24", timeLimit: 30 },
+    { question: "Hàm số y = 3x^2 là hàm số gì?", answer: "Hàm bậc hai", timeLimit: 20 },
+    { question: "Nếu A ∩ B = ∅ thì A và B có mối quan hệ gì?", answer: "Hai tập hợp rời nhau", timeLimit: 30 }
+    // Thêm các thử thách khác tại đây
+];
+
+
+let currentAnswer = '';
+let timeRemaining;
+let timerInterval;
+
+function generateRandomChallenge() {
+    const randomIndex = Math.floor(Math.random() * challenges.length);
+    const selectedChallenge = challenges[randomIndex];
+    currentAnswer = selectedChallenge.answer;
+    timeRemaining = selectedChallenge.timeLimit;
+    document.getElementById('challengeText').innerText = selectedChallenge.question;
+    document.getElementById('dailyChallenge').style.display = 'block';
+    document.getElementById('feedback').innerText = '';
+    document.getElementById('timeRemaining').innerText = timeRemaining;
+    timerInterval = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    if (timeRemaining > 0) {
+        timeRemaining--;
+        document.getElementById('timeRemaining').innerText = timeRemaining;
+    } else {
+        clearInterval(timerInterval);
+        checkAnswer();
+    }
+}
+
+function submitAnswer() {
+    clearInterval(timerInterval);
+    checkAnswer();
+}
+
+
+function checkAnswer() {
+    const userAnswer = document.getElementById('userAnswer').value;
+    let feedback = document.getElementById('feedback');
+
+    if (userAnswer === currentAnswer) {
+        feedback.innerText = 'Chính xác!';
+    } else {
+        feedback.innerText = 'Sai rồi hoặc hết thời gian, hãy thử lại!';
+    }
+    // Ẩn thử thách sau 2 giây và không hiển thị lại cho đến sau 60 phút
+    setTimeout(hideChallenge, 2000);
+}
+
+function hideChallenge() {
+    clearInterval(timerInterval);
+    document.getElementById('dailyChallenge').style.display = 'none';
+
+    // Đặt hẹn giờ để hiển thị lại thử thách sau 60 phút
+    setTimeout(function() {
+        generateRandomChallenge();
+    }, 3600000); // 60 phút = 3600000 mili giây
+}
+
+window.onload = function() {
+    setTimeout(generateRandomChallenge, 5000);
+};
+function showChallenge() {
+    document.getElementById('contentWrapper').classList.add('blur-background');
+    document.getElementById('dailyChallenge').style.display = 'block';
+    // Khởi tạo thử thách...
+}
+   // Khởi tạo thử thách khi trang web được tải
+window.onload = function() {
+    // Đặt hẹn giờ để hiển thị thử thách sau 5 giây khi trang web được tải
+    setTimeout(generateRandomChallenge, 5000);
+};
+
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > lastScrollTop && currentScroll > 20) {
+        document.getElementById("backToTopBtn").style.display = "block";
+    } else {
+        document.getElementById("backToTopBtn").style.display = "none";
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Đối với IE
+}, false);
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll(".img-fade");
+    const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.classList.add('img-visible');
+                imgObserver.unobserve(img);
+            }
+        });
+    });
+    images.forEach((img) => {
+        imageObserver.observe(img);
+    });
+});
+document.getElementById('categorySelect').addEventListener('change', function(event) {
+    var selectedCategory = event.target.value;
+    var courses = document.querySelectorAll('.item');
+
+    courses.forEach(course => {
+        if (selectedCategory === 'all' || course.classList.contains(selectedCategory)) {
+            course.style.display = 'block';
+        } else {
+            course.style.display = 'none';
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    var filterSelect = document.getElementById('categorySelect');
+    filterSelect.addEventListener('change', function(event) {
+        var selectedCategory = event.target.value;
+        var courses = document.querySelectorAll('.item');
+
+        courses.forEach(function(course) {
+            if (selectedCategory === 'all' || course.classList.contains(selectedCategory)) {
+                course.style.display = 'block';
+            } else {
+                course.style.display = 'none';
+            }
+        });
+    });
+});
+
+document.getElementById('categorySelect').addEventListener('change', function(event) {
+    var selectedCategory = event.target.value;
+    var courses = document.querySelectorAll('.item'); // Đảm bảo rằng lớp '.item' được gắn cho mỗi khóa học
+
+    courses.forEach(function(course) {
+        if (selectedCategory === 'all' || course.classList.contains(selectedCategory)) {
+            course.style.display = 'block';
+        } else {
+            course.style.display = 'none';
+        }
+    });
+});
+courses.forEach(course => {
+  if (selectedCategory === course.classList[0]) {
+    course.style.display = 'block';
+  } else {
+    course.style.display = 'none'; 
+  }
+})
+
+courses.forEach(course => {
+  if (course.classList.contains(selectedCategory)) {
+    course.style.display = 'block';
+  } else {
+    course.style.display = 'none';
+  }  
+})
+
+
+     // Kiểm tra nếu trình duyệt hỗ trợ Service Worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+    .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+    }).catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+    });
+}
+
+   // sw.js
+self.addEventListener('push', function(event) {
+    var options = {
+        body: event.data.text(),
+        icon: 'icon.png',
+        badge: 'badge.png'
+    };
+
+    event.waitUntil(
+        self.registration.showNotification('Thông báo mới', options)
+    );
+});
+
+Notification.requestPermission().then(function(permission) {
+    if (permission === "granted") {
+        console.log("Quyền thông báo đã được chấp nhận");
+    }
+});
+       
+function subscribeUserToPush() {
+    return navigator.serviceWorker.ready.then(function(serviceWorker) {
+        const subscribeOptions = {
+            userVisibleOnly: true,
+            applicationServerKey: 'YOUR_PUBLIC_VAPID_KEY'
+        };
+
+        return serviceWorker.pushManager.subscribe(subscribeOptions);
+    })
+    .then(function(pushSubscription) {
+        console.log('Received PushSubscription:', JSON.stringify(pushSubscription));
+        // Gửi pushSubscription tới server
+        return pushSubscription;
+    });
+}
 
      </script>
     <div id="loginModal" class="modal">
