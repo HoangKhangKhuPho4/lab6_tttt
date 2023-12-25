@@ -93,6 +93,20 @@
       .button-style:hover {
         background-color: #0056b3;
       }
+
+      #backToTopBtn {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
@@ -109,6 +123,8 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
+    <button id="backToTopBtn" title="Go to top">⬆️</button>
+
     <h2>Menu Labs</h2>
 
     <div class="tab">
@@ -543,6 +559,15 @@
       function goToHomePage() {
         window.location.href = "index.html"; // Chuyển hướng đến trang chủ
       }
+
+      document
+        .getElementById("backToTopBtn")
+        .addEventListener("click", function () {
+          window.scrollTo({
+            top: 0, // Cuộn lên đầu trang
+            behavior: "smooth", // Cuộn mượt mà
+          });
+        });
     </script>
   </body>
 </html>
